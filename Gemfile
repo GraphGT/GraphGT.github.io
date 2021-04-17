@@ -2,6 +2,7 @@
 
 source "https://rubygems.org"
 gem "bulma-clean-theme"
+gem 'github-pages'
 
 group :jekyll_plugins do
     gem 'jekyll', '~> 3.9.1'
@@ -11,5 +12,3 @@ group :jekyll_plugins do
     gem "jekyll-seo-tag"
 end
 
-
-gem "webrick", "~> 1.7"
