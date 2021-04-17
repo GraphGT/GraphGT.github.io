@@ -9,7 +9,7 @@ description: >
 baseurl: ""
 url: "https://graphgenerationdataset.github.io/"
 permalink: pretty
-#favicon: /path/to/favicon.png
+favicon: /img/logo.png
 gh_sponsor: graphgenerationdataset
 #hide_share_buttons: true
 #theme_color: '#eeeeee'
