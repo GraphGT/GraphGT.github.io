@@ -1,12 +1,12 @@
 style: is-light
 items:
-  - title: Multiple page layouts
-    subtitle: Including sidebar, menubar, tabs and callouts
+  - title: Multi-type Datasets
+    subtitle: Multiple graph generative task data
+    icon: fa-database
+  - title: Library & Dataloaders
+    subtitle: Loading data conveniently
     icon: fa-copy
-  - title: Blog included
-    subtitle: Layouts for blog and post pages included
-    icon: fa-mail-bulk
-  - title: Works with GitHub Pages
+  - title: Tutorials & Examples
     subtitle: Quick and easy to get started
     icon: fa-github
     icon_brand: true
