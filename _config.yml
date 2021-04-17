@@ -6,8 +6,8 @@ email: ydu6@gmu.edu
 theme: bulma-clean-theme
 description: >
   The demo site for Bulma Clean Theme, made for Jekyll and GitHub pages websites
-baseurl: "/DGGDataset"
-url: "https://www.csrhymes.com"
+baseurl: ""
+url: "https://graphgenerationdataset.github.io/"
 permalink: pretty
 #favicon: /path/to/favicon.png
 gh_sponsor: graphgenerationdataset
