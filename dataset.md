@@ -10,17 +10,6 @@ menubar: example_menu
 
 ## Dataset Categories
 
-<!-- The menubar gets its content from a data file in your site's `_data` directory. Simply set the name of your data file in the page's menubar setting in the frontmatter. 
-
-```yml
-title: Page with menubar
-subtitle: Demo page with a menubar
-layout: page
-show_sidebar: false
-menubar: example_menu
-```
-
-You will probably want to disable the show_sidebar otherwise there will be little room for the page's content.  -->
 
 ## Biomolecules
 
@@ -39,23 +28,33 @@ Enzymes [6]
 
 Brain Networks [7]
 
-## Academic Graphs
+## Collaboration Networks
 
-Citation Networks [7]
+Citation Networks [8]
 
-## Skeleton Graphs
-
-Human Skeleton Point Clouds [8]
-
-## Scene Graphs
-
-Scene Graphs [9]
-
-## Authetication Networks
+Co-authorship Networks [9]
 
 ## Circuit Networks
 
-## Synthetic Datasets
+Circuit Networks [10]
+
+## Traffic Networks
+
+Traffice Networks [11]
+
+## Authetication Networks
+
+## IoT Networks
+
+## Skeleton Graphs
+
+Human Skeleton Point Clouds []
+
+## Scene Graphs
+
+Scene Graphs []
+
+## Synthetic Graphs
 
 
 

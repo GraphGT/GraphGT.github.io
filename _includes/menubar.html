@@ -10,7 +10,7 @@
             {% if item.items %}
             <ul>
                 {% for subitem in item.items %}
-                <li><a href="{{ subitem.link | relative_url }}" class="{% if subitem.link == page.url %}is-active{% endif %}">{{ subitem.name }}</a></li>
+                <li><a href="{{ subitem.link | relative_url }}" id="{{ subitem.short }}" class="{% if subitem.link == page.url %}is-active{% endif %}">{{ subitem.name }}</a></li>
                 {% endfor %}
             </ul>
             {% endif %}

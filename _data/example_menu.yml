@@ -2,6 +2,34 @@
   items:
     - name: Dataset
       link: /dataset/
+      items:
+        - name: Biomolecules
+          short: Biomolecules
+          link: /dataset/#Biomolecules
+        - name: Collaboration Networks
+          short: Collaboration
+          link: /dataset/#Collaboration
+        - name: Circuit Networks
+          short: Circuit
+          link: /dataset/#Circuit
+        - name: Traffic Networks
+          short: Traffic
+          link: /dataset/#Traffic
+        - name: Authetication Networks
+          short: Authetication
+          link: /dataset/#Authetication
+        - name: IoT Networks
+          short: IoT
+          link: /dataset/#IoT
+        - name: Skeleton Graphs
+          short: Skeleton
+          link: /dataset/#Skeleton
+        - name: Scene Graphs
+          short: Scene
+          link: /dataset/#Scene
+        - name: Synthetic Graphs
+          short: Synthetic
+          link: /dataset/#Synthetic
     # - name: Pages
     #   link: /#
     #   items:
