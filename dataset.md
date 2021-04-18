@@ -18,11 +18,11 @@ menubar: example_menu
 
 **Description**
 
-It is an enumeration of around 134k sta- ble organic molecules with up to 9 heavy atoms (carbon, oxygen, nitrogen and fluorine). As no filtering is applied, the molecules in this dataset only reflect basic structural constraints.
+It is an enumeration of around 134k stable organic molecules with up to 9 heavy atoms (carbon, oxygen, nitrogen and fluorine). As no filtering is applied, the molecules in this dataset only reflect basic structural constraints.
 
 **Acknowledgements**
 
-R. Ramakrishnan, P. O. Dral, M. Rupp, and O. A. Von Lilien- feld, “Quantum chemistry structures and properties of 134 kilo molecules,” Scientific data, vol. 1, no. 1, pp. 1–7, 2014.
+R. Ramakrishnan, P. O. Dral, M. Rupp, and O. A. Von Lilienfeld, “Quantum chemistry structures and properties of 134 kilo molecules,” Scientific data, vol. 1, no. 1, pp. 1–7, 2014.
 
 ---
 
@@ -30,11 +30,35 @@ R. Ramakrishnan, P. O. Dral, M. Rupp, and O. A. Von Lilien- feld, “Quantum che
 
 **Description**
 
-This dataset is a curated set of 250k commer- cially available drug-like chemical compounds. On average, these molecules are bigger (about 23 heavy atoms) and structurally more complex than the molecules in QM9.
+This dataset is a curated set of 250k commercially available drug-like chemical compounds. On average, these molecules are bigger (about 23 heavy atoms) and structurally more complex than the molecules in QM9.
 
 **Acknowledgements**
 
 J. J. Irwin, T. Sterling, M. M. Mysinger, E. S. Bolstad, and R. G. Coleman, “Zinc: a free tool to discover chemistry for biology,” Journal of chemical information and modeling, vol. 52, no. 7, pp. 1757–1768, 2012.
+
+---
+
+### MOSES
+
+**Description**
+
+Molecular Sets (MOSES) is a benchmark platform for distribution learning based molecule generation. Within this benchmark, MOSES provides a cleaned dataset of molecules that are ideal of optimization. It is processed from the ZINC Clean Leads dataset.
+
+**Acknowledgements**
+
+Polykovskiy, Daniil, et al. "Molecular sets (MOSES): a benchmarking platform for molecular generation models." Frontiers in pharmacology 11 (2020).
+
+---
+
+### ChEMBL
+
+**Description**
+
+ChEMBL is a manually curated database of bioactive molecules with drug-like properties. It brings together chemical, bioactivity and genomic data to aid the translation of genomic information into effective new drugs.
+
+**Acknowledgements**
+
+Mendez, David, et al. “ChEMBL: towards direct deposition of bioassay data.” Nucleic acids research 47.D1 (2019): D930-D940.
 
 ---
 
@@ -214,7 +238,7 @@ There are three subsets with different graph sizes. Each input/target graph is s
 
 Acknowledgements
 
-Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. Inhe 19th International Conference on Data Mining (ICDM 2019), pp. to appear 2019.
+Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. In the 19th International Conference on Data Mining (ICDM 2019), pp. to appear 2019.
 
 ---
 
@@ -226,7 +250,13 @@ Human Skeleton Point Clouds
 
 ### Scene Graphs
 
-Scene Graphs 
+**Description**
+
+CLEVR provides a dataset for visual question answer, which can be formalized as a spatial-graph dataset. There are $10$ objects in the image with different 3D locations. Each  object is identified by its shape, such as sphere, cylinder, and cube. The relationship between two objects can be categorized into four types: right, behind, front, left, with directions. Thus, each image can be formalized as a labeled directed graph with different edge types and node types. Thus, the spatial information of each nodes is closely correlated with the edge types between each pair of nodes. There are 70,000 training samples and 15,000 testing samples.
+
+**Acknowlegements**
+
+Johnson, Justin and Hariharan, Bharath and van der Maaten, Laurens and Fei-Fei, Li and Lawrence Zitnick, C. and Girshick, Ross. CLEVR: A Diagnostic Dataset for Compositional Language and Elementary Visual Reasoning. In the Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2017.
 
 ---
 
