@@ -30,6 +30,16 @@
         - name: Synthetic Graphs
           short: Synthetic
           link: /dataset/#Synthetic
+    - name: Task
+      link: /tasks/
+      items:
+        - name: Deep Graph Generation
+          short: Generation
+          link: /Tasks/#Generation
+        - name: Deep Graph Translation
+          short: Translation
+          link: /Tasks/#Translation
+
     # - name: Pages
     #   link: /#
     #   items:

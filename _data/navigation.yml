@@ -27,6 +27,8 @@
     #   link: /sponsors/
     # - name: Recipe Page
     #   link: /example-recipe/
+- name: Task
+  link: /tasks/
 - name: Team
   link: /team/
 # - name: Products
