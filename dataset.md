@@ -20,12 +20,11 @@ menubar: example_menu
 
 It is an enumeration of around 134k stable organic molecules with up to 9 heavy atoms (carbon, oxygen, nitrogen and fluorine). As no filtering is applied, the molecules in this dataset only reflect basic structural constraints.
 
-```
+
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
 QM9 | Quantum Chemistry Dataset | | | | |
 
-```
 
 **Acknowledgements**
 
