@@ -7,8 +7,6 @@
           short: Biomolecules
           link: /dataset/#Biomolecules
         - names: Physical Simulation Networks
-          short: none
-          link: /dataset/#Physics
         - name: Collaboration Networks
           short: Collaboration
           link: /dataset/#Collaboration
