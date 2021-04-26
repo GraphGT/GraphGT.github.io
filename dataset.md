@@ -158,7 +158,7 @@ D. Lowe, “Patent reaction extraction: downloads,” 2014.
 
 ---
 
-## <a href='#physics' id='physics' class='anchor' aria-hidden='true'>Physical Simulation Networks</a>
+## Physical Simulation Networks
 
 ### N-body Simulations
 
