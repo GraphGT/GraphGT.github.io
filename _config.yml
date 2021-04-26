@@ -1,7 +1,7 @@
 # Site Settings
 lang: en
-title: Deep Graph Generation Dataset Collections
-tagline: Deep Graph Generation Dataset Collections
+title: GraphGen
+tagline: A Large-scale Graph Generative Dataset Collection
 email: ydu6@gmu.edu
 theme: bulma-clean-theme
 description: >
