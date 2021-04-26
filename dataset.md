@@ -11,7 +11,7 @@ menubar: example_menu
 ## Dataset Categories
 
 
-## Biomolecules
+## Molecules
 
 <!-- Create a data file in the _data directory and use the following format (if using yml) -->
 ### QM9 
@@ -105,52 +105,6 @@ J.Hachmann,R.Olivares-Amaya,S.Atahan-Evrenk,C.Amador- Bedolla, R. S. Sa ́nchez-
 
 ---
 
-### Protein
-
-**Description**
-
-This dataset contains 918 protein graphs with 100 ≤ \|V\| ≤ 500. Each protein is represented by a graph, where nodes are amino acids and two nodes are connected if they are less than 6 Angstroms apart.
-
-Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
------------- | ------------- | ------------ | ------------ | ------------ | ------------ |
-Protein |  | | | | |
-
-Download link:
-
-**Acknowledgements**
-
-P. D. Dobson and A. J. Doig, “Distinguishing enzyme structures from non-enzymes without alignments,” Journal of molecular biol- ogy, vol. 330, no. 4, pp. 771–783, 2003.
-
----
-
-### Enzymes 
-
-**Description**
-
-This dataset contains protein tertiary structures representing 600 enzymes. Nodes in a graph (pro- tein) represent secondary structure elements, and two nodes are connected if the corresponding elements are interacting. The node labels indicate the type of secondary structure, which is either helices, turns, or sheets.
-
-Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
------------- | ------------- | ------------ | ------------ | ------------ | ------------ |
-Enzymes |  | | | | |
-
-Download link:
-
-**Acknowledgements**
-
-I. Schomburg, A. Chang, C. Ebeling, M. Gremse, C. Heldt, G. Huhn, and D. Schomburg, “Brenda, the enzyme database: updates and major new developments,” Nucleic acids research, vol. 32, no. suppl 1, pp. D431–D433, 2004.
-
----
-
-### Brain Networks
-
-Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
------------- | ------------- | ------------ | ------------ | ------------ | ------------ |
- | Brain Networks | | | | |
-
-Download link:
-
----
-
 ### Molecule Optimization
 
 **Problem Background**
@@ -214,6 +168,67 @@ Acknowledgements
 Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. Inhe 19th International Conference on Data Mining (ICDM 2019), pp. to appear 2019.
 
 D. Lowe, “Patent reaction extraction: downloads,” 2014.
+
+---
+
+## Proteins
+
+### Protein
+
+**Description**
+
+This dataset contains 918 protein graphs with 100 ≤ \|V\| ≤ 500. Each protein is represented by a graph, where nodes are amino acids and two nodes are connected if they are less than 6 Angstroms apart.
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+Protein |  | | | | |
+
+Download link:
+
+**Acknowledgements**
+
+P. D. Dobson and A. J. Doig, “Distinguishing enzyme structures from non-enzymes without alignments,” Journal of molecular biol- ogy, vol. 330, no. 4, pp. 771–783, 2003.
+
+---
+
+### Protein Folding
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+ProFold |  | | | | |
+
+Download link:
+
+
+---
+
+### Enzymes 
+
+**Description**
+
+This dataset contains protein tertiary structures representing 600 enzymes. Nodes in a graph (pro- tein) represent secondary structure elements, and two nodes are connected if the corresponding elements are interacting. The node labels indicate the type of secondary structure, which is either helices, turns, or sheets.
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+Enzymes |  | | | | |
+
+Download link:
+
+**Acknowledgements**
+
+I. Schomburg, A. Chang, C. Ebeling, M. Gremse, C. Heldt, G. Huhn, and D. Schomburg, “Brenda, the enzyme database: updates and major new developments,” Nucleic acids research, vol. 32, no. suppl 1, pp. D431–D433, 2004.
+
+---
+
+## Brain Networks
+
+### Brain Networks
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+ | Brain Networks | | | | |
+
+Download link:
 
 ---
 

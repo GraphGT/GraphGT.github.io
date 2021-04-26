@@ -3,8 +3,12 @@
     - name: Dataset
       link: /dataset/
       items:
-        - name: Biomolecules
-          link: /dataset/#biomolecules
+        - name: Molecules
+          link: /dataset/#molecules
+        - name: Proteins
+          link: /dataset/#proteins
+        - name: Brain Networks
+          link: /dataset/#brain-networks
         - name: Physical Simulation Networks
           link: /dataset/#physical-simulation-networks
         - name: Collaboration Networks
