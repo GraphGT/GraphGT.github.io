@@ -1,6 +1,6 @@
 ---
-title: Deep Graph Generation Dataset Collections
-# subtitle: This is the demo site for Bulma Clean Theme
+title: GraphGen
+subtitle: A Large-scale Graph Generative Dataset Collection
 layout: page
 callouts: home_callouts
 show_sidebar: false
