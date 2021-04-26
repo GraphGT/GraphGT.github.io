@@ -20,6 +20,11 @@ menubar: example_menu
 
 It is an enumeration of around 134k stable organic molecules with up to 9 heavy atoms (carbon, oxygen, nitrogen and fluorine). As no filtering is applied, the molecules in this dataset only reflect basic structural constraints.
 
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+N-body | Content from cell 2
+N-body | Content in the second column
+
 **Acknowledgements**
 
 R. Ramakrishnan, P. O. Dral, M. Rupp, and O. A. Von Lilienfeld, “Quantum chemistry structures and properties of 134 kilo molecules,” Scientific data, vol. 1, no. 1, pp. 1–7, 2014.
@@ -165,7 +170,7 @@ D. Lowe, “Patent reaction extraction: downloads,” 2014.
 Name | Type | Samples| Nodes | Edges | Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
 N-body | Content from cell 2
-Content in the first column | Content in the second column
+N-body | Content in the second column
 
 ---
 
