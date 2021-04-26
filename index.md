@@ -6,6 +6,14 @@ callouts: home_callouts
 show_sidebar: false
 ---
 
+## Cite us
+Please cite us if you use GraphGen in your work:
+```
+GraphGen: A Large-scale Graph Generative Dataset Collection, Yuanqi Du, Xiaojie Guo, Hengning Cao, Liang Zhao, 2021.
+```
+
+Please also make sure to cite the original data source as linked below the datasets.
+
 <!-- # Bulma Clean Theme demo website
 
 This website showcases the options for the Bulma Clean theme. The theme is available as a ruby gem or can be used with GitHub pages. 
