@@ -9,10 +9,12 @@ show_sidebar: false
 ## Cite us
 Please cite us if you use GraphGen in your work:
 ```
-GraphGen: A Large-scale Graph Generative Dataset Collection, Yuanqi Du, Xiaojie Guo, Hengning Cao, Liang Zhao, 2021.
+GraphGen: A Large-scale Graph Generative Dataset Collection. Yuanqi Du, Xiaojie Guo, Hengning Cao, Liang Zhao, 2021.
 ```
 
 Please also make sure to cite the original data source as linked below the datasets.
+
+If you would like to submit datasets or have any questions, do not hesitate to contact us ydu6@gmu.edu.
 
 <!-- # Bulma Clean Theme demo website
 

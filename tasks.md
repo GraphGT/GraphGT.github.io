@@ -1,6 +1,6 @@
 ---
-title: Deep Graph Generation Dataset Collections
-# subtitle: Demo page with a menubar
+title: GraphGen
+subtitle: A Large-scale Graph Generative Dataset Collection
 layout: page
 show_sidebar: false
 menubar: example_menu
