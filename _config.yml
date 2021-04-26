@@ -10,7 +10,7 @@ baseurl: ""
 url: "https://graphgen-dc.github.io/"
 permalink: pretty
 favicon: /img/logo.png
-gh_sponsor: graphgenerationdataset
+gh_sponsor: graphgen-dc
 #hide_share_buttons: true
 #theme_color: '#eeeeee'
 fixed_navbar: top
