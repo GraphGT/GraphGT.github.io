@@ -27,9 +27,9 @@
       link: /tasks/
       items:
         - name: Deep Graph Generation
-          link: /Tasks/#deep-graph-generation
+          link: /tasks/#deep-graph-generation
         - name: Deep Graph Translation
-          link: /Tasks/#deep-graph-translation
+          link: /tasks/#deep-graph-translation
 
     # - name: Pages
     #   link: /#
