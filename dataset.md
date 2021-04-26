@@ -25,6 +25,7 @@ Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
 QM9 | Quantum Chemistry Dataset | | | | |
 
+Download link: 
 
 **Acknowledgements**
 
@@ -38,6 +39,12 @@ R. Ramakrishnan, P. O. Dral, M. Rupp, and O. A. Von Lilienfeld, “Quantum chemi
 
 This dataset is a curated set of 250k commercially available drug-like chemical compounds. On average, these molecules are bigger (about 23 heavy atoms) and structurally more complex than the molecules in QM9.
 
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+ZINC | Drug-like Molecules | | | | |
+
+Download link:
+
 **Acknowledgements**
 
 J. J. Irwin, T. Sterling, M. M. Mysinger, E. S. Bolstad, and R. G. Coleman, “Zinc: a free tool to discover chemistry for biology,” Journal of chemical information and modeling, vol. 52, no. 7, pp. 1757–1768, 2012.
@@ -49,6 +56,12 @@ J. J. Irwin, T. Sterling, M. M. Mysinger, E. S. Bolstad, and R. G. Coleman, “Z
 **Description**
 
 Molecular Sets (MOSES) is a benchmark platform for distribution learning based molecule generation. Within this benchmark, MOSES provides a cleaned dataset of molecules that are ideal of optimization. It is processed from the ZINC Clean Leads dataset.
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+MOSES |  | | | | |
+
+Download link:
 
 **Acknowledgements**
 
@@ -62,6 +75,12 @@ Polykovskiy, Daniil, et al. "Molecular sets (MOSES): a benchmarking platform for
 
 ChEMBL is a manually curated database of bioactive molecules with drug-like properties. It brings together chemical, bioactivity and genomic data to aid the translation of genomic information into effective new drugs.
 
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+ChEMBL | Bioactive Molecules | | | | |
+
+Download link:
+
 **Acknowledgements**
 
 Mendez, David, et al. “ChEMBL: towards direct deposition of bioassay data.” Nucleic acids research 47.D1 (2019): D930-D940.
@@ -73,6 +92,12 @@ Mendez, David, et al. “ChEMBL: towards direct deposition of bioassay data.” 
 **Description**
 
 This dataset consists of organic molecules with an emphasis on photo-voltaic applications. The con- tained molecules have 28 heavy atoms on average and contain six to seven rings each.
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+CEPDB | Organic Molecules | | | | |
+
+Download link:
 
 **Acknowledgements**
 
@@ -86,6 +111,12 @@ J.Hachmann,R.Olivares-Amaya,S.Atahan-Evrenk,C.Amador- Bedolla, R. S. Sa ́nchez-
 
 This dataset contains 918 protein graphs with 100 ≤ \|V\| ≤ 500. Each protein is represented by a graph, where nodes are amino acids and two nodes are connected if they are less than 6 Angstroms apart.
 
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+Protein |  | | | | |
+
+Download link:
+
 **Acknowledgements**
 
 P. D. Dobson and A. J. Doig, “Distinguishing enzyme structures from non-enzymes without alignments,” Journal of molecular biol- ogy, vol. 330, no. 4, pp. 771–783, 2003.
@@ -98,6 +129,12 @@ P. D. Dobson and A. J. Doig, “Distinguishing enzyme structures from non-enzyme
 
 This dataset contains protein tertiary structures representing 600 enzymes. Nodes in a graph (pro- tein) represent secondary structure elements, and two nodes are connected if the corresponding elements are interacting. The node labels indicate the type of secondary structure, which is either helices, turns, or sheets.
 
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+Enzymes |  | | | | |
+
+Download link:
+
 **Acknowledgements**
 
 I. Schomburg, A. Chang, C. Ebeling, M. Gremse, C. Heldt, G. Huhn, and D. Schomburg, “Brenda, the enzyme database: updates and major new developments,” Nucleic acids research, vol. 32, no. suppl 1, pp. D431–D433, 2004.
@@ -106,7 +143,11 @@ I. Schomburg, A. Chang, C. Ebeling, M. Gremse, C. Heldt, G. Huhn, and D. Schombu
 
 ### Brain Networks
 
-**Will be released soon**
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+ | Brain Networks | | | | |
+
+Download link:
 
 ---
 
@@ -128,6 +169,12 @@ Drug likeness (QED) This task is to improve drug likeness of compounds. Specific
 
 Dopamine Receptor (DRD2) This task is to improve a molecule’s biological activity against a biological target named the dopamine type 2 receptor (DRD2). We use a trained model from Olivecrona et al. (2017) to assess the probability that a compound is active. We ask the model to translate molecules with predicted probability p < 0:05 into active compounds with p > 0.5. The active compounds represent only 1.9% of the dataset. With similarity constraint 0.4, we derived a training set of 34K molecular pairs from ZINC. The test set contains 1000 molecules.
 
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+MolOpt |  | | | | |
+
+Download link:
+
 **Acknowledgements**
 
 Jin, W., Yang, K., Barzilay, R., & Jaakkola, T. (2018). Learning multimodal graph-to-graph translation for molecular optimization. arXiv preprint arXiv:1812.01070.
@@ -147,6 +194,12 @@ The chemistry preaction product prediction can be formalized as the graph transl
 **Description**
 
 There are totally 7180 pairs of reactant anf product molecule graph in the dataset. The number of nodes (atoms) of molecule ranges from 9 to 20, and the number of atoms for each pair is recorded and stored in the file "Num_nodes.cxv". The file folder "mol_edge" store all the adjacent matrix for the input and target graph. The dimension of the adjacent matrix is 20 by 20, and for those graphs whose nodes are less than 20, we use zero to pad. The values in adjacent matrix is in [0,1,2,3,4] representing five bond types (none, single, double, triple, or aromatic). The folder "Mol_nodes" stores the node features for all the nodes in each graph. The node feature indicates the atom type (82 types) which are embedded by one-hot vector with 82 dimensions. In this problem setting, the node feature remains unchanged during the translation.
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+ChemReact |  | | | | |
+
+Download link:
 
 [Mol_edge](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EZzBXqVYGQZBijWzB6XV-k4BYrQjJp4J2GKDPlhYdDfkqw)
 
@@ -168,10 +221,11 @@ D. Lowe, “Patent reaction extraction: downloads,” 2014.
 
 ### N-body Simulations
 
-Name | Type | Samples| Nodes | Edges | Description
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-N-body | Content from cell 2
-N-body | Content in the second column
+N-body |  | | | | |
+
+Download link: 
 
 ---
 
@@ -181,11 +235,22 @@ N-body | Content in the second column
 
 **Description**
 
-Cora and Citeseer are citation networks; nodes correspond to publications and an edge represents one paper citing the other. Node labels represent the publication area. The Cora dataset contains 2708 nodes, 5429 edges, 7 classes and 1433 features per node. The Cite- seer dataset contains 3327 nodes, 4732 edges, 6 classes and 3703 features per node
+Cora and Citeseer are citation networks; nodes correspond to publications and an edge represents one paper citing the other. Node labels represent the publication area. The Cora dataset contains 2708 nodes, 5429 edges, 7 classes and 1433 features per node. The Citeseer dataset contains 3327 nodes, 4732 edges, 6 classes and 3703 features per node
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+Cora |  | | | | |
+Citeseer |  | | | | |
+
+Download link: 
 
 ---
 
 ### Co-authorship Networks 
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+CollabNet |  | | | | |
 
 
 
@@ -197,6 +262,10 @@ Cora and Citeseer are citation networks; nodes correspond to publications and an
 
 In circuit simplification, a logical expression is reduced to a logically equivalent expression with fewer operations. We construct a dataset of random circuits with 15-30 nodes (3-8 variables). Each node in the graph corresponds to one of four node types: variables, NOT-gates, OR-gates, and AND-gates. Node features are given by a one-hot encoding of the four node types. All generated circuits were valid, i.e. they have a single sink node, NOT-gate nodes have a single input, variable nodes have no inputs, and OR and AND-gate nodes have at least two inputs. To produce ground truth simplifications, the generated logical expressions corresponding to each graphs were simplified using the Sympy Python library, which provides an equivalent expression either in conjunctive normal form (CNF) or disjunctive normal form (DNF), depending on which is more compact. Any circuits that simplified to True (tautology) or False (unsatisfiable) were excluded. We use 10,000 circuit pairs for training and 2,500 pairs for testing. Node features are given by a one-hot encoding of the four node types. [Circuit dataset] (https://github.com/claradepaolis/D2DRNN)
 
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+CircuitNet |  | | | | |
+
 **Acknowledgements**
 
 Kaluza, M. C. D. P., Amizadeh, S., & Yu, R. A Neural Framework for Learning DAG to DAG Translation.
@@ -206,6 +275,10 @@ Kaluza, M. C. D. P., Amizadeh, S., & Yu, R. A Neural Framework for Learning DAG 
 ## Traffic Networks
 
 Traffice Networks 
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+TraffNet |  | | | | |
 
 ---
 
@@ -222,6 +295,10 @@ The goal of this application was to forecast future potential users' malicious a
 **Description**
 
 There are two subsets of different sizes of graphs (i.e., 50 and 300). For each subset, we have train anf test folder seperately. Train set contains the graph pairs (one-to-one) which are just used for training. Test set contains data for each user. For each user, there are several input graphs (i.e. regular user authentication activity graph) and several target graphs (i.e. malware user authentication acticity graph). There input and target graphs in test set are not one-to-one, which can be tested by indirect evaluation. There is no node attributes for this dataset, and only edge attribute is considered. For each graph, the value of i(th) row and j(th) colomn refers to the edge attribute of Node i and j (0 refers to no links).
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+AuthNet |  | | | | |
 
 [Auth_50](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/Ed5FSLojkadImn4PvDgln_8B6pCP0oePBXbq-osyDpBcFQ)
 
@@ -247,6 +324,10 @@ Malware dataset are collected for malware confinement prediction. There are thre
 
 There are three subsets with different graph sizes. Each input/target graph is stored in the file with name " IoT-[graph_size]-[input/output]-[infection rate]-[recovery rate]-[decay rate]-[index].csv". The infection rate, recovery rate and decay rate can be used as the contextual controlling parameters in generating the target graph. The value of i(th) row and j(th) colomn refers to the phsical distance of Node i and j (0 refers to no links). The value of i(th) row and i(th) colomn refers to the node attribute (i.e. device status) of the Node i.
 
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+IoNet |  | | | | |
+
 [IoT_20](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EcZsWKkLcxBKpaZ-X7_CHcoB5VAEzd9AGYgxATWIUPAsRw)
 
 [IoT_40](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/Eekr5lVPZBlMk6_1KkBgZbIBWPRYzDrA6tt9WOhJ1yUbEA)
@@ -263,6 +344,10 @@ Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-att
 
 Human Skeleton Point Clouds 
 
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+SkNet |  | | | | |
+
 ---
 
 ### Scene Graphs
@@ -270,6 +355,10 @@ Human Skeleton Point Clouds
 **Description**
 
 CLEVR provides a dataset for visual question answer, which can be formalized as a spatial-graph dataset. There are $10$ objects in the image with different 3D locations. Each  object is identified by its shape, such as sphere, cylinder, and cube. The relationship between two objects can be categorized into four types: right, behind, front, left, with directions. Thus, each image can be formalized as a labeled directed graph with different edge types and node types. Thus, the spatial information of each nodes is closely correlated with the edge types between each pair of nodes. There are 70,000 training samples and 15,000 testing samples.
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+SceneGraphs |  | | | | |
 
 **Acknowlegements**
 
@@ -286,6 +375,10 @@ This dataset fits the "one-to-many" mapping graph translation version. There are
 **Content**
 
 There are five subsets of data with different graph size (i.e. number of nodes): 10, 20, 50, 100, and 150. In each subset, each input and output graph are stored in the "scale-(graph_size)-input-index.csv" and "scale-(graph_size)-target-index.csv" file. For each file, the value in i(th) comlume, j(th) row indicates whether the number of connections (edge weights) between Node i and Node j (1 indicating there is an edge and 0 otherwise). These dataset can be downloaded through the following links:
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+Scale Free Graphs |  | | | | |
 
 [Scale_free_150](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EQ7FRL8QWYdPg25QaCe0VpEBHwioyA4nEjP2GDgiVQQwVw)
 
@@ -311,6 +404,10 @@ This dataset fit the problem of "one-to-one" mapping verision of graph translati
 
 There are three subsets of data with different graph size (i.e. number of nodes): 20, 40, and 60. In each subset, each input and output graph are stored in the "ER-(graph_size)-input-index.csv" and "ER-(graph_size)-target-index.csv" file. For each file, the value in i(th) comlume, j(th) row indicates whether the number of connections (edge weights) between Node i and Node j (1 indicating there is an edge and 0 otherwise). The value in i(th) row and i(th) column indicates the node attributes of the i(th) node. These dataset can be downloaded through the following links:
 
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+Erdos-Renyi Graphs |  | | | | |
+
 [ER_20](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EacBEmToBKdPtOhjJocARikBV6WRr7kNs50QyFShsx1k1w)
 
 [ER_40](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EU7TdmWC_z1HvY3KLcPonZwBB167_MYTQZuW8wSso4Qc1g)
@@ -330,6 +427,10 @@ This dataset fit the problem of "one-to-one" mapping verision of graph translati
 **Contents**
 
 There are three subsets of data with different graph size (i.e. number of nodes): 20, 40, and 60. In each subset, each input and output graph are stored in the "BA-(graph_size)-input-index.csv" and "BA-(graph_size)-target-index.csv" file. For each file, the value in i(th) comlume, j(th) row indicates whether the number of connections (edge weights) between Node i and Node j (1 indicating there is an edge and 0 otherwise). The value in i(th) row and i(th) column indicates the node attributes of the i(th) node. These dataset can be downloaded through the following links:
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+Barab´asi-Albert Graphs |  | | | | |
 
 [BA_20](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/ESU5immRQ3xCvxkAy0LFvlgBTJrF0eHDosjRhnnayUXqHw)
 
