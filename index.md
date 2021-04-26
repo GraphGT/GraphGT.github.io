@@ -14,7 +14,7 @@ GraphGen: A Large-scale Graph Generative Dataset Collection. Yuanqi Du, Xiaojie 
 
 Please also make sure to cite the original data source as linked below the datasets.
 
-If you would like to submit datasets or have any questions, do not hesitate to contact us ydu6@gmu.edu.
+If you would like to submit datasets or have any questions, do not hesitate to contact us by email: [ydu6@gmu.edu](mailto:ydu6@gmu.edu).
 
 <!-- # Bulma Clean Theme demo website
 
