@@ -7,7 +7,7 @@ theme: bulma-clean-theme
 description: >
   The demo site for Bulma Clean Theme, made for Jekyll and GitHub pages websites
 baseurl: ""
-url: "https://graphgenerationdataset.github.io/"
+url: "https://graphgen-dc.github.io/"
 permalink: pretty
 favicon: /img/logo.png
 gh_sponsor: graphgenerationdataset
