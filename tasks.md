@@ -8,7 +8,7 @@ menubar: example_menu
 
 <!-- This is another sample page showing how a page can look with a menubar.  -->
 
-## Tasks
+## Task Categories
 
 
 ## Deep Graph Generation
