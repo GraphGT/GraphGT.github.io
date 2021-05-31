@@ -19,12 +19,12 @@ menubar: example_menu
 
 **Description**
 
-It is an enumeration of around 134k stable organic molecules with up to 9 heavy atoms (carbon, oxygen, nitrogen and fluorine). As no filtering is applied, the molecules in this dataset only reflect basic structural constraints.
+QM9 dataset is an enumeration of around 134k stable organic molecules with up to 9 heavy atoms (carbon, oxygen, nitrogen and fluorine). As no filtering is applied, the molecules in this dataset only reflect basic structural constraints.
 
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-QM9 | Quantum Chemistry Dataset | | | | |
+QM9 | Molecule | | | | |
 
 Download link: 
 
@@ -42,7 +42,7 @@ This dataset is a curated set of 250k commercially available drug-like chemical 
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-ZINC | Drug-like Molecules | | | | |
+ZINC | Molecule | | | | |
 
 Download link:
 
@@ -60,7 +60,7 @@ Molecular Sets (MOSES) is a benchmark platform for distribution learning based m
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-MOSES |  | | | | |
+MOSES | Molecule | | | | |
 
 Download link:
 
@@ -78,7 +78,7 @@ ChEMBL is a manually curated database of bioactive molecules with drug-like prop
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-ChEMBL | Bioactive Molecules | | | | |
+ChEMBL | Molecule | | | | |
 
 Download link:
 
@@ -96,7 +96,7 @@ This dataset consists of organic molecules with an emphasis on photo-voltaic app
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-CEPDB | Organic Molecules | | | | |
+CEPDB | Molecule | | | | |
 
 Download link:
 
@@ -126,7 +126,7 @@ Dopamine Receptor (DRD2) This task is to improve a molecule’s biological activ
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-MolOpt |  | | | | |
+MolOpt | Molecule | | | | |
 
 Download link:
 
@@ -152,7 +152,7 @@ There are totally 7180 pairs of reactant anf product molecule graph in the datas
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-ChemReact |  | | | | |
+ChemReact | Molecule | | | | |
 
 Download link:
 
@@ -164,7 +164,7 @@ Download link:
 
 More datasets of chemical reaction can be found in [USPTO-15K](https://github.com/wengong-jin/nips17-rexgen).
 
-Acknowledgements
+**Acknowledgements**
 
 Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. Inhe 19th International Conference on Data Mining (ICDM 2019).
 
@@ -196,7 +196,7 @@ P. D. Dobson and A. J. Doig, “Distinguishing enzyme structures from non-enzyme
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-ProFold |  | | | | |
+ProFold | Protein | | | | |
 
 Download link:
 
@@ -211,7 +211,7 @@ This dataset contains protein tertiary structures representing 600 enzymes. Node
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-Enzymes |  | | | | |
+Enzymes | Protein | | | | |
 
 Download link:
 
@@ -227,7 +227,7 @@ I. Schomburg, A. Chang, C. Ebeling, M. Gremse, C. Heldt, G. Huhn, and D. Schombu
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
- | Brain Networks | | | | |
+ | Brain Network | | | | |
 
 Download link:
 
@@ -239,7 +239,12 @@ Download link:
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-N-body |  | | | | |
+N-body-Spring | Physical Simulation Network | | | | |
+
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+N-body-Charged | Physical Simulation Network | | | | |
 
 Download link: 
 
@@ -255,8 +260,8 @@ Cora and Citeseer are citation networks; nodes correspond to publications and an
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-Cora |  | | | | |
-Citeseer |  | | | | |
+Cora | Citation Network | | | | |
+Citeseer | Citation Network | | | | |
 
 Download link: 
 
@@ -284,7 +289,7 @@ In circuit simplification, a logical expression is reduced to a logically equiva
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-CircuitNet |  | | | | |
+CircuitNet | Circuit Network | | | | |
 
 **Acknowledgements**
 
@@ -297,32 +302,34 @@ Kaluza, M. C. D. P., Amizadeh, S., & Yu, R. A Neural Framework for Learning DAG 
 Traffic Network (META-LA) 
 
 **Description**
+
 This dataset is collected by Los Angeles Metropolitan Transportation Authority (LA-Metro), and processed by University of Southern California's Integrated Media Systems Center. This dataset contains traffic information collected from 207 loop detectors in the highway of Los Angeles County for 4 months (from Mar 1st 2012 to Jun 30th 2012). Each sensor records traffic speed value per 5 minutes.
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-TraffNet-LA | Spatiotemporal | | | | |
+TraffNet-LA | Traffic Network | | | | |
 
 Traffic Network (PeMS) 
 
 **Description**
+
 This dataset is collected by California Transportation Agencies (CalTrans) Performance Measurement System (PeMS). PeMS-BAY dataset collects traffic information in the Bay Area. The dataset contains traffic information of 325 sensors within 5 months (From Jan 1st 2017 to May 31st 2017). Each sensor records traffic speed value per 5 minutes.
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-TraffNet-PeMS | Spatiotemporal | | | | |
+TraffNet-PeMS | Traffic Network | | | | |
 
 ---
 
 ### Authetication Networks
 
-**Problem Background**
-
-Important trade secrets stored in an enterprise’s computer network are extremely hard to defend from theft-of-trade-secret behaviors, which involve highly sophisticated activities in terms of malicious authentication paths over cyber-networks. Malicious detection involves learning from rich historical attack examples, which however are not available for all the employee accounts. The generic distribution of theft behaviors from historical attacks on some accounts can be learned and used to synthesize a range of possible malicious authentication graphs for other accounts based on their regular authentication graphs.
-
-**Contents**
-
-The goal of this application was to forecast future potential users' malicious authentication graphs given the user’s normal authentication graph, which is an one-to-many mapping version of graph translation. This dataset includes the authentication activities of 97 users on their accessible computers and servers in an enterprise computer network (Kent, 2015). Each user account generates a log file recording the computer accessing history, which could be formulated as a directed weighted graph called authentication graph, where nodes represent computers and the directed edges weights represent the authentication activities with certain frequencies. This data set spans one calendar year of contiguous activity spanning 2012 and 2013. It originated from 33.9 billion raw event logs (1.4 terabytes compressed) collected across the LANL enterprise network of approximately 24,000 computers. The input graphs represent authentication events collected from individualWindows-based desktop computers, servers, and Active Directory servers. The target graphs present specific events taken from the authentication data that present known red team compromise events, as we call malicious event. The red team data can used as ground truth of bad behavior which is different from normal user. Each graph can represent the log-on activity of one user in a time window. This task is the one-many-mapping, which means for each input graph, there can be many potential target graphs that follows the same distribution.
+<!--**Problem Background**-->
+<!---->
+<!--Important trade secrets stored in an enterprise’s computer network are extremely hard to defend from theft-of-trade-secret behaviors, which involve highly sophisticated activities in terms of malicious authentication paths over cyber-networks. Malicious detection involves learning from rich historical attack examples, which however are not available for all the employee accounts. The generic distribution of theft behaviors from historical attacks on some accounts can be learned and used to synthesize a range of possible malicious authentication graphs for other accounts based on their regular authentication graphs.-->
+<!---->
+<!--**Contents**-->
+<!---->
+<!--The goal of this application was to forecast future potential users' malicious authentication graphs given the user’s normal authentication graph, which is an one-to-many mapping version of graph translation. This dataset includes the authentication activities of 97 users on their accessible computers and servers in an enterprise computer network (Kent, 2015). Each user account generates a log file recording the computer accessing history, which could be formulated as a directed weighted graph called authentication graph, where nodes represent computers and the directed edges weights represent the authentication activities with certain frequencies. This data set spans one calendar year of contiguous activity spanning 2012 and 2013. It originated from 33.9 billion raw event logs (1.4 terabytes compressed) collected across the LANL enterprise network of approximately 24,000 computers. The input graphs represent authentication events collected from individualWindows-based desktop computers, servers, and Active Directory servers. The target graphs present specific events taken from the authentication data that present known red team compromise events, as we call malicious event. The red team data can used as ground truth of bad behavior which is different from normal user. Each graph can represent the log-on activity of one user in a time window. This task is the one-many-mapping, which means for each input graph, there can be many potential target graphs that follows the same distribution.-->
 
 **Description**
 
@@ -330,7 +337,7 @@ There are two subsets of different sizes of graphs (i.e., 50 and 300). For each 
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-AuthNet |  | | | | |
+AuthNet | Authetication Network | | | | |
 
 [Auth_50](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/Ed5FSLojkadImn4PvDgln_8B6pCP0oePBXbq-osyDpBcFQ)
 
@@ -344,31 +351,31 @@ Guo, X., Wu, L., & Zhao, L. (2018). Deep graph translation. arXiv preprint arXiv
 
 ### IoT Networks
 
-**Problem Background**
+<!--**Problem Background**-->
 
 <!--The process of malware confinement over IoT (Internet of Things) is typically a graph translation problem. A device infected in an IoT network can propagate to other nodes connected to it, leading to contaminating the whole network, such as MiraiBot attack. As such, it is non-trivial to confine the malware to limit the infection and also equally important to maintain overall network connectivity and performance. The malware confinement takes the initial status of IoT as input, and predicts the target graph which is ideally the optimal status of the network with modified connections (i.e., edges) and devices (i.e., nodes) state that helps to limit malware propagation and maintain network throughput. Tranditional malware confinement are based on ad-hoc methods, which heavily rely on intensive handcrafting and domain-specific mechanistic models that could be extremely time- and resource- consuming to run in large scale. Hence, a generic, efficient, and end-to-end method is in demand, which is able to comprehensively learn the translation mapping, remedy human bias by enjoying the large historical data, and achieve efficient prediction.-->
 
-**Dataset Collection**
-
-Malware dataset is collected for malware confinement prediction. There are three sets of IoT nodes at different amount (20, 40 and 60) encompassing temperature sensors connected with Intel ATLASEDGE Board and Beagle Boards (BeagleBone Blue), communicating via Bluetooth protocol. Benign and malware activities are executed on these devices to generate the initial attacked networks as the input graphs. Benign activities include MiBench [34] and SPEC2006 [35], Linux system programs, and word processor. The nodes represent devices and node attribute is a binary value referring to whether the device is compromised or not. Edge represents the connection of two devices and the edge attribute is a continuous value reflecting the distance of two devices. The real target graphs are generated by the classical malware confinement methods: stochastic controlling with malware detection. We collect 334 pairs of input and target graphs with different contextual parameters (infection rate, recovery rate, and decay rate) for each of the three datasets. In this dataset, there are both nodes attributes and edge attributes considered.
-
 **Description**
 
-There are three subsets with different graph sizes. Each input/target graph is stored in the file with name " IoT-[graph_size]-[input/output]-[infection rate]-[recovery rate]-[decay rate]-[index].csv". The infection rate, recovery rate and decay rate can be used as the contextual controlling parameters in generating the target graph. The value of i(th) row and j(th) colomn refers to the phsical distance of Node i and j (0 refers to no links). The value of i(th) row and i(th) colomn refers to the node attribute (i.e. device status) of the Node i.
+Malware dataset is collected for malware confinement prediction. There are three sets of IoT nodes at different amounts (20, 40 and 60) encompassing temperature sensors connected with Intel ATLASEDGE Board and Beagle Boards (BeagleBone Blue), communicating via Bluetooth protocol. Benign and malware activities are executed on these devices to generate the initial attacked networks as the input graphs. Benign activities include MiBench and SPEC2006, Linux system programs, and word processors. The nodes represent devices and node attribute is a binary value referring to whether the device is compromised or not. Edge represents the connection of two devices and the edge attribute is a continuous value reflecting the distance of two devices. The real target graphs are generated by the classical malware confinement methods: stochastic controlling with malware detection. We collect 334 pairs of input and target graphs with different contextual parameters (infection rate, recovery rate, and decay rate) for each of the three datasets. In this dataset, there are both nodes attributes and edge attributes considered.
+
+<!--**Description**-->
+<!---->
+<!--There are three subsets with different graph sizes. Each input/target graph is stored in the file with name " IoT-[graph_size]-[input/output]-[infection rate]-[recovery rate]-[decay rate]-[index].csv". The infection rate, recovery rate and decay rate can be used as the contextual controlling parameters in generating the target graph. The value of i(th) row and j(th) colomn refers to the phsical distance of Node i and j (0 refers to no links). The value of i(th) row and i(th) colomn refers to the node attribute (i.e. device status) of the Node i.-->
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-IoNet |  | | | | |
+IoTNet | IoT Network | 343 | 20/40/60 | 220/630/800 | N/A |
 
-[IoT_20](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EcZsWKkLcxBKpaZ-X7_CHcoB5VAEzd9AGYgxATWIUPAsRw)
+[IoT_20](https://drive.google.com/file/d/1ee29hChMdXkZHsCwwQh5sRMoOyq4bfkO/view?usp=sharing)
 
-[IoT_40](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/Eekr5lVPZBlMk6_1KkBgZbIBWPRYzDrA6tt9WOhJ1yUbEA)
+[IoT_40](https://drive.google.com/file/d/1HMmSHi8YAzdcT6fBYSX8j6y-h4fNTgOf/view?usp=sharing)
 
-[IoT_60](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EY6Emi5mPQdDodCY0dK_ISQB4oYGpRnaMfxY2EpSCE7VLw)
+[IoT_60](https://drive.google.com/file/d/1vBfwU1aCV2ky8CWWz8ebVT3UjkanoPBU/view?usp=sharing)
 
 Acknowledgements
 
-Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. In the 19th International Conference on Data Mining (ICDM 2019), pp. to appear 2019.
+Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. In the 19th International Conference on Data Mining (ICDM 2019).
 
 ---
 
@@ -378,7 +385,7 @@ Human Skeleton Point Clouds
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-SkNet |  | | | | |
+SkeNet | Skeleton Graph | | | | |
 
 ---
 
@@ -386,11 +393,11 @@ SkNet |  | | | | |
 
 **Description**
 
-CLEVR provides a dataset for visual question answer, which can be formalized as a spatial-graph dataset. There are $10$ objects in the image with different 3D locations. Each  object is identified by its shape, such as sphere, cylinder, and cube. The relationship between two objects can be categorized into four types: right, behind, front, left, with directions. Thus, each image can be formalized as a labeled directed graph with different edge types and node types. Thus, the spatial information of each nodes is closely correlated with the edge types between each pair of nodes. There are 70,000 training samples and 15,000 testing samples.
+CLEVR provides a dataset for visual question answer, which can be formalized as a spatial-graph dataset. There are $10$ objects in the image with different 3D locations. Each object is identified by its shape, such as sphere, cylinder, and cube. The relationship between two objects can be categorized into four types: right, behind, front, left, with directions. Thus, each image can be formalized as a labeled directed graph with different edge types and node types. Thus, the spatial information of each nodes is closely correlated with the edge types between each pair of nodes. There are 70,000 training samples and 15,000 testing samples.
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-SceneGraphs |  | | | | |
+SceneGraph | Scene Graph | | | | |
 
 **Acknowlegements**
 
@@ -407,11 +414,11 @@ This dataset is generated as a directed scalefree network, which is a network wh
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-Scale Free Graphs | Synthetic | 10000 | 10/20/50/100/150 | 20/40/?/?/? | NA |
+Scale Free Graphs | Synthetic Graph | 10000 | 10/20/50/100/150 | 20/40/?/200/? | NA |
 
 scale_free_150
 
-[scale_free_100](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EXLsRjyz7z1HhRur-F9jkpwBFfRhO14NfQxXoLSHwCzYfg)
+[scale_free_100](https://drive.google.com/file/d/1dZUcsa_jlzkap7YxZ-vIeQrOMSKJT_Ih/view?usp=sharing)
 
 scale_free_50
 
@@ -432,7 +439,7 @@ This dataset is generated by the Erdos Renyi model with the edge probability of 
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-Erdos-Renyi Graphs | Synthetic | 1000 |  20/40/60 | 100/200/400 | NA |
+Erdos-Renyi Graphs | Synthetic Graph | 1000 |  20/40/60 | 100/200/400 | NA |
 
 [ERG_20](https://drive.google.com/file/d/1h4gXNQiOQNLiOx6ufdGRaUz5MxpU0EG8/view?usp=sharing)
 
@@ -454,7 +461,7 @@ This dataset is generated by the Barab´asi-Albert model. It fits the problem of
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-Barab´asi-Albert Graphs | Synthetic | 1000 | 20/40/60 | 60/190/300 | N/A |
+Barab´asi-Albert Graphs | Synthetic Graph | 1000 | 20/40/60 | 60/190/300 | N/A |
 
 [BAG_20](https://drive.google.com/file/d/1sAz8oSSD4rkFJyOyG7CVdC6KZ5OThlkp/view?usp=sharing)
 
