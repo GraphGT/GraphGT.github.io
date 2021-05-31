@@ -14,6 +14,7 @@ menubar: example_menu
 ## Molecules
 
 <!-- Create a data file in the _data directory and use the following format (if using yml) -->
+
 ### QM9 
 
 **Description**
@@ -165,7 +166,7 @@ More datasets of chemical reaction can be found in [USPTO-15K](https://github.co
 
 Acknowledgements
 
-Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. Inhe 19th International Conference on Data Mining (ICDM 2019), pp. to appear 2019.
+Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. Inhe 19th International Conference on Data Mining (ICDM 2019).
 
 D. Lowe, “Patent reaction extraction: downloads,” 2014.
 
@@ -206,7 +207,7 @@ Download link:
 
 **Description**
 
-This dataset contains protein tertiary structures representing 600 enzymes. Nodes in a graph (pro- tein) represent secondary structure elements, and two nodes are connected if the corresponding elements are interacting. The node labels indicate the type of secondary structure, which is either helices, turns, or sheets.
+This dataset contains protein tertiary structures representing 600 enzymes. Nodes in a graph (protein) represent secondary structure elements, and two nodes are connected if the corresponding elements are interacting. The node labels indicate the type of secondary structure, which is either helices, turns, or sheets.
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
@@ -263,9 +264,13 @@ Download link:
 
 ### Co-authorship Networks 
 
+**Description**
+
+This dataset is collected from DBLP-Citation-network V12, which contains around 4.9 million papers and 45 million citation relationships. We construct graphs by selecting authors as nodes and co-authorships as edges during the time period from 1990 to 2019. To cut the graphs into pieces, we generate sub-graphs based on the Fields of Study attribute from papers. For each field, we generate one spatio-temporal graph. We generate 2361 spatio-tempora graphs with a total of around 9 million nodes and a total of around 6 million of edges.
+
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-CollabNet |  | | | | |
+CollabNet | Spatiotemporal | 2361 | | | |
 
 
 
@@ -289,11 +294,23 @@ Kaluza, M. C. D. P., Amizadeh, S., & Yu, R. A Neural Framework for Learning DAG 
 
 ## Traffic Networks
 
-Traffice Networks 
+Traffic Network (META-LA) 
+
+**Description**
+This dataset is collected by Los Angeles Metropolitan Transportation Authority (LA-Metro), and processed by University of Southern California's Integrated Media Systems Center. This dataset contains traffic information collected from 207 loop detectors in the highway of Los Angeles County for 4 months (from Mar 1st 2012 to Jun 30th 2012). Each sensor records traffic speed value per 5 minutes.
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-TraffNet |  | | | | |
+TraffNet-LA | Spatiotemporal | | | | |
+
+Traffic Network (PeMS) 
+
+**Description**
+This dataset is collected by California Transportation Agencies (CalTrans) Performance Measurement System (PeMS). PeMS-BAY dataset collects traffic information in the Bay Area. The dataset contains traffic information of 325 sensors within 5 months (From Jan 1st 2017 to May 31st 2017). Each sensor records traffic speed value per 5 minutes.
+
+Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
+------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
+TraffNet-PeMS | Spatiotemporal | | | | |
 
 ---
 
@@ -329,11 +346,11 @@ Guo, X., Wu, L., & Zhao, L. (2018). Deep graph translation. arXiv preprint arXiv
 
 **Problem Background**
 
-The process of malware confinement over IoT (Internet of Things) is typically a graph translation problem. A device infected in an IoT network can propagate to other nodes connected to it, leading to contaminating the whole network, such as MiraiBot attack. As such, it is non-trivial to confine the malware to limit the infection and also equally important to maintain overall network connectivity and performance. The malware confinement takes the initial status of IoT as input, and predicts the target graph which is ideally the optimal status of the network with modified connections (i.e., edges) and devices (i.e., nodes) state that helps to limit malware propagation and maintain network throughput. Tranditional malware confinement are based on ad-hoc methods, which heavily rely on intensive handcrafting and domain-specific mechanistic models that could be extremely time- and resource- consuming to run in large scale. Hence, a generic, efficient, and end-to-end method is in demand, which is able to comprehensively learn the translation mapping, remedy human bias by enjoying the large historical data, and achieve efficient prediction.
+<!--The process of malware confinement over IoT (Internet of Things) is typically a graph translation problem. A device infected in an IoT network can propagate to other nodes connected to it, leading to contaminating the whole network, such as MiraiBot attack. As such, it is non-trivial to confine the malware to limit the infection and also equally important to maintain overall network connectivity and performance. The malware confinement takes the initial status of IoT as input, and predicts the target graph which is ideally the optimal status of the network with modified connections (i.e., edges) and devices (i.e., nodes) state that helps to limit malware propagation and maintain network throughput. Tranditional malware confinement are based on ad-hoc methods, which heavily rely on intensive handcrafting and domain-specific mechanistic models that could be extremely time- and resource- consuming to run in large scale. Hence, a generic, efficient, and end-to-end method is in demand, which is able to comprehensively learn the translation mapping, remedy human bias by enjoying the large historical data, and achieve efficient prediction.-->
 
 **Dataset Collection**
 
-Malware dataset are collected for malware confinement prediction. There are three sets of IoT nodes at different amount (20, 40 and 60) encompassing temperature sensors connected with Intel ATLASEDGE Board and Beagle Boards (BeagleBone Blue), communicating via Bluetooth protocol. Benign and malware activities are executed on these devices to generate the initial attacked networks as the input graphs. Benign activities include MiBench [34] and SPEC2006 [35], Linux system programs, and word processor. The nodes represent devices and node attribute is a binary value referring to whether the device is compromised or not. Edge represents the connection of two devices and the edge attribute is a continuous value reflecting the distance of two devices. The real target graphs are generated by the classical malware confinement methods: stochastic controlling with malware detection. We collected 334 pairs of input and target graphs with different contextual parameters (infection rate, recovery rate, and decay rate) for each of the three datasets. In this dataset, there are both nodes attributes and edge attributes considered.
+Malware dataset is collected for malware confinement prediction. There are three sets of IoT nodes at different amount (20, 40 and 60) encompassing temperature sensors connected with Intel ATLASEDGE Board and Beagle Boards (BeagleBone Blue), communicating via Bluetooth protocol. Benign and malware activities are executed on these devices to generate the initial attacked networks as the input graphs. Benign activities include MiBench [34] and SPEC2006 [35], Linux system programs, and word processor. The nodes represent devices and node attribute is a binary value referring to whether the device is compromised or not. Edge represents the connection of two devices and the edge attribute is a continuous value reflecting the distance of two devices. The real target graphs are generated by the classical malware confinement methods: stochastic controlling with malware detection. We collect 334 pairs of input and target graphs with different contextual parameters (infection rate, recovery rate, and decay rate) for each of the three datasets. In this dataset, there are both nodes attributes and edge attributes considered.
 
 **Description**
 
@@ -385,25 +402,22 @@ Johnson, Justin and Hariharan, Bharath and van der Maaten, Laurens and Fei-Fei, 
 ---
 ### Scale-free Graphs
 
-This dataset fits the "one-to-many" mapping graph translation version. There are no node features in the dataset, and the goal is to learn the mapping from the input graphs' topology to the target graph's topology. Each input graph is generated as a directed scalefree network, which is a network whose degree distribution follows power-law property (Bollobas´ et al., 2003). To generate a target graph, a node will by selected as target node with probability proportional to its in-degree, which will be linked to a new source node with probability of 0.41. Similarly, a node will by selected as source node with probability proportional to its out-degree, which will be linked to a new target node with probability of 0.54. Then, a corresponding target graph is generated by adding m (m equals the number of nodes of the input graph) edges between two nodes. Thus, both input and target graphs are directed scale-free graphs.
+This dataset is generated as a directed scalefree network, which is a network whose degree distribution follows power-law property (Bollobas´ et al., 2003). It fits the "one-to-many" mapping graph translation problem. There are no node features in this dataset, and the goal is to learn the mapping from the input graphs' topology to the target graph's topology. To generate a target graph, a node will by selected as target node with probability proportional to its in-degree, which will be linked to a new source node with probability of 0.41. Similarly, a node will by selected as source node with probability proportional to its out-degree, which will be linked to a new target node with probability of 0.54. Then, a corresponding target graph is generated by adding m (m equals the number of nodes of the input graph) edges between two nodes. Thus, both input and target graphs are directed scale-free graphs.
 
-**Content**
-
-There are five subsets of data with different graph size (i.e. number of nodes): 10, 20, 50, 100, and 150. In each subset, each input and output graph are stored in the "scale-(graph_size)-input-index.csv" and "scale-(graph_size)-target-index.csv" file. For each file, the value in i(th) comlume, j(th) row indicates whether the number of connections (edge weights) between Node i and Node j (1 indicating there is an edge and 0 otherwise). These dataset can be downloaded through the following links:
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-Scale Free Graphs |  | | | | |
+Scale Free Graphs | Synthetic | 10000 | 10/20/50/100/150 | 20/40/?/?/? | NA |
 
-[Scale_free_150](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EQ7FRL8QWYdPg25QaCe0VpEBHwioyA4nEjP2GDgiVQQwVw)
+scale_free_150
 
 [scale_free_100](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EXLsRjyz7z1HhRur-F9jkpwBFfRhO14NfQxXoLSHwCzYfg)
 
-[scale_free_50](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/Ec7OxxtCrW5Nr7itfQAlcagBQaRNG-ttRt-DZkj8jBxphQ)
+scale_free_50
 
-[scale_free_20](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EQ3WsWoTBwNLsQXQOIwChOgBsbDIUfZpp0tmvJYGp0JrtA)
+[scale_free_20](https://drive.google.com/file/d/1oyOrc5Ni-k-r4tkZ-wteRgyKKSYuN3LO/view?usp=sharing)
 
-[scale_free_10](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EartEwo94NtJrsBUSDCaSyIBYgHxLSVj6qwziixaQHHHdw)
+[scale_free_10](https://drive.google.com/file/d/1MACOaciUIskYRo2c6LiAVkmMDLdDIjz7/view?usp=sharing)
 
 **Acknowledgements**
 
@@ -413,49 +427,44 @@ Guo, X., Wu, L., & Zhao, L. (2018). Deep graph translation. arXiv preprint arXiv
 
 ### Erdos-Renyi Graphs
 
-This dataset fit the problem of "one-to-one" mapping verision of graph translation. For each pair of graphs, the input graph is generated by the Erdos Renyi model with the edge probability of 0.2. The target graph topology is the 2-hop connection of the input graph, where each edge in the target graph refers to the 2-hop reachability in the input graph (e.g. if node i is 2-hop reachable to node j in the input graph, then they are connected in the target graph). There are edge and node attributes for graphs in this dataset: the edge attributes E_(i,j) denotes the existence of the edge and the node attributes are continuous values computed following the polynomial function: f(x) : y = ax^2 + bx + c(a =0; b =1; c= 5), where x is the node degree and f(x) is the node attribute.
-
-**Contents**
-
-There are three subsets of data with different graph size (i.e. number of nodes): 20, 40, and 60. In each subset, each input and output graph are stored in the "ER-(graph_size)-input-index.csv" and "ER-(graph_size)-target-index.csv" file. For each file, the value in i(th) comlume, j(th) row indicates whether the number of connections (edge weights) between Node i and Node j (1 indicating there is an edge and 0 otherwise). The value in i(th) row and i(th) column indicates the node attributes of the i(th) node. These dataset can be downloaded through the following links:
+**Description**
+This dataset is generated by the Erdos Renyi model with the edge probability of 0.2. It fits the problem of "one-to-one" mapping problem of graph translation. It contains pairs of (input, target) graphs. The target graph topology is the 2-hop connection of the input graph, where each edge in the target graph refers to the 2-hop reachability in the input graph (e.g. if node i is 2-hop reachable to node j in the input graph, then they are connected in the target graph). There are edge and node attributes for graphs in this dataset: the edge attributes E_(i,j) denotes the existence of the edge and the node attributes are continuous values computed following the polynomial function: f(x) : y = ax^2 + bx + c(a =0; b =1; c= 5), where x is the node degree and f(x) is the node attribute.
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-Erdos-Renyi Graphs |  | | | | |
+Erdos-Renyi Graphs | Synthetic | 1000 |  20/40/60 | 100/200/400 | NA |
 
-[ER_20](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EacBEmToBKdPtOhjJocARikBV6WRr7kNs50QyFShsx1k1w)
+[ERG_20](https://drive.google.com/file/d/1h4gXNQiOQNLiOx6ufdGRaUz5MxpU0EG8/view?usp=sharing)
 
-[ER_40](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EU7TdmWC_z1HvY3KLcPonZwBB167_MYTQZuW8wSso4Qc1g)
+[ERG_40](https://drive.google.com/file/d/1YAXfXpxhbuaNpl698l19VU3TtatgRJ9L/view?usp=sharing)
 
-[ER_60](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EQYmsg6wu3ZAuvHS1Klc_gwBdZP3jCl_PM2p6p7nLMZ66g)
+[ERG_60](https://drive.google.com/file/d/19yk_t3zY8OY1Uzi2jNHt1dg67wOGpZS4/view?usp=sharing)
 
 **Acknowledgements**
 
-Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. Inhe 19th International Conference on Data Mining (ICDM 2019), pp. to appear 2019.
+Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. Inhe 19th International Conference on Data Mining (ICDM 2019).
 
 ---
 
 ### Barab´asi-Albert Graphs
 
-This dataset fit the problem of "one-to-one" mapping verision of graph translation. For each pair of graphs, the input graph is generated by the Barab´asi-Albert model. The target graph topology is the 2-hop connection of the input graph, where each edge in the target graph refers to the 3-hop reachability in the input graph (e.g. if node i is 3-hop reachable to node j in the input graph, then they are connected in the target graph). There are edge and node attributes for graphs in this dataset: the edge attributes E_(i,j) denotes the existence of the edge and the node attributes are continuous values computed following the polynomial function: f(x) : y = ax^2 + bx + c(a =0; b =1; c= 5), where x is the node degree and f(x) is the node attribute.
+**Description**
+This dataset is generated by the Barab´asi-Albert model. It fits the problem of "one-to-one" mapping problem of graph translation. It contains pairs of (input, target) graphs. The target graph topology is the 2-hop connection of the input graph, where each edge in the target graph refers to the 3-hop reachability in the input graph (e.g. if node i is 3-hop reachable to node j in the input graph, then they are connected in the target graph). There are edge and node attributes for graphs in this dataset: the edge attributes E_(i,j) denotes the existence of the edge and the node attributes are continuous values computed following the polynomial function: f(x) : y = ax^2 + bx + c(a =0; b =1; c= 5), where x is the node degree and f(x) is the node attribute. Here we provide the datasets with three different node sizes.
 
-**Contents**
-
-There are three subsets of data with different graph size (i.e. number of nodes): 20, 40, and 60. In each subset, each input and output graph are stored in the "BA-(graph_size)-input-index.csv" and "BA-(graph_size)-target-index.csv" file. For each file, the value in i(th) comlume, j(th) row indicates whether the number of connections (edge weights) between Node i and Node j (1 indicating there is an edge and 0 otherwise). The value in i(th) row and i(th) column indicates the node attributes of the i(th) node. These dataset can be downloaded through the following links:
 
 Name | Type | #Graphs| #Nodes per graph |#Edges per graph| Description
 ------------ | ------------- | ------------ | ------------ | ------------ | ------------ |
-Barab´asi-Albert Graphs |  | | | | |
+Barab´asi-Albert Graphs | Synthetic | 1000 | 20/40/60 | 60/190/300 | N/A |
 
-[BA_20](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/ESU5immRQ3xCvxkAy0LFvlgBTJrF0eHDosjRhnnayUXqHw)
+[BAG_20](https://drive.google.com/file/d/1sAz8oSSD4rkFJyOyG7CVdC6KZ5OThlkp/view?usp=sharing)
 
-[BA_40](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EaihwXZdW2dHpl0X22dtD5wBcKFD9X6F1SoYhDKzAhRX1w)
+[BAG_40](https://drive.google.com/file/d/1kzM99Zj53XRkHsmgHyk7xrySFdT7znTC/view?usp=sharing)
 
-[BA_60](https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EV96-W8Kw1hFnMxDudDWCk0BK6J24_my2yD7KrgJLR-yWw)
+[BAG_60](https://drive.google.com/file/d/1iZM1x34fRNccHSfHo5A6jOHwn0d3AIhp/view?usp=sharing)
 
 **Acknowledgements**
 
-Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. Inhe 19th International Conference on Data Mining (ICDM 2019), pp. to appear 2019.
+Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. Inhe 19th International Conference on Data Mining (ICDM 2019).
 
 
 
