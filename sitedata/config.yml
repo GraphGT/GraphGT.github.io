@@ -1,5 +1,5 @@
 name: GraphGen
-tagline: "Graph Gen: A Large-scale Graph Generation Dataset Collection"
+tagline: "GraphGen: A Large-scale Graph Generation Dataset Collection"
 analytics: UA-
 logo:
   image: static/images/logo.png
