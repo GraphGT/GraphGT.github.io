@@ -1,691 +1,264 @@
-# bulma-clean-theme
+<p align="center">
+<img src="static/images/G4L-logo.png" width="800" class="center" alt="logo"/>
+    <br/>
+</p>
+ 
+[pypi-image]: https://badge.fury.io/py/graph4nlp.svg
 
-[![Gem Version](https://badge.fury.io/rb/bulma-clean-theme.svg)](https://badge.fury.io/rb/bulma-clean-theme)
-![Gem](https://img.shields.io/gem/dt/bulma-clean-theme.svg)
+[pypi-url]: https://pypi.org/project/graph4nlp
 
-This is a clean and simple Jekyll Theme built with the [Bulma](https://bulma.io/) framework, providing a modern-looking site to start with. 
+[license-image]:https://img.shields.io/badge/License-Apache%202.0-blue.svg
 
-The theme uses [Alpine.js](https://github.com/alpinejs/alpine) for its interactive components, such as mobile navbar and notifications.
+[license-url]:https://github.com/graph4ai/graph4nlp/blob/master/LICENSE
 
-## Contents
+[contributor-image]:https://img.shields.io/github/contributors/graph4ai/graph4nlp
 
-* [Installation](#installation)
-* [Usage](#usage)
-    * [Lang](#lang)
-    * [Pages](#pages)
-        * [Page Hero](#page-hero)
-        * [Table Of Contents](#table-of-contents)
-    * [Posts](#posts)
-    * [Navigation](#navigation)
-    * [Colours and Styles](#colours-and-styles)
-    * [Sidebar Visibility](#sidebar-visibility)
-    * [Menubar](#menubar)
-    * [Tabs](#tabs)
-    * [Notifications](#notifications)
-    * [Tags](#tags)
-    * [Google Analytics](#google-analytics)
-    * [Footer](#footer)
-    * [Products](#products)
-    * [Scripts](#scripts)
-    * [Callouts](#callouts)
-    * [Favicon](#favicon)
-    * [Showcases](#showcases)
-    * [Sponsors](#sponsors)
-    * [Gallery](#gallery)
-    * [Disqus](#disqus)
-    * [Recipe](#recipe)
-* [Contributing](#contributing)
-* [Development](#development)
-* [Licence](#licence)
+[contributor-url]:https://github.com/graph4ai/graph4nlp/contributors
 
+[contributing-image]:https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
+
+[contributing-url]:to_be_add
+
+[issues-image]:https://img.shields.io/github/issues/graph4ai/graph4nlp
+
+[issues-url]:https://github.com/graph4ai/graph4nlp/issues
+
+[forks-image]:https://img.shields.io/github/forks/graph4ai/graph4nlp
+
+[forks-url]:https://github.com/graph4ai/graph4nlp/fork
+
+[stars-image]:https://img.shields.io/github/stars/graph4ai/graph4nlp
+
+[stars-url]:https://github.com/graph4ai/graph4nlp/stars
+
+![Last Commit](https://img.shields.io/github/last-commit/graph4ai/graph4nlp)
+[![pypi][pypi-image]][pypi-url]
+[![Contributors][contributor-image]][contributor-url]
+[![Contributing][contributing-image]][contributing-url]
+[![License][license-image]][license-url]
+[![Issues][issues-image]][issues-url]
+[![Fork][forks-image]][forks-url]
+[![Star][stars-image]][stars-url]
+
+# Graph4NLP
+
+***Graph4NLP*** is an easy-to-use library for R&D at the intersection of **Deep Learning on Graphs** and
+**Natural Language Processing** (i.e., DLG4NLP). It provides both **full implementations** of state-of-the-art models for data scientists and also **flexible interfaces** to build customized models for researchers and developers with whole-pipeline support. Built upon highly-optimized runtime libraries including [DGL](https://github.com/dmlc/dgl) , ***Graph4NLP*** has both high running efficiency and great extensibility. The architecture of ***Graph4NLP*** is shown in the following figure, where boxes with dashed lines represents the features under development. Graph4NLP consists of four different layers: 1) Data Layer, 2) Module Layer, 3) Model Layer, and 4) Application Layer.
+
+<p align="center">
+    <img src="static/images/arch.png" alt="architecture" width="700" />
+    <br>
+    <b>Figure</b>: Graph4NLP Overall Architecture
+</p>
+
+## <img src="static/images/new.png" alt='new' width=30 /> Graph4NLP news
+**06/05/2021:** The **v0.4.1 release**. Try it out!
+
+## Quick tour
+
+***Graph4nlp*** aims to make it incredibly easy to use GNNs in NLP tasks (check out [Graph4NLP Documentation](http://saizhuo.wang/g4nlp/index.html)). Here is an example of how to use the [*Graph2seq*](http://saizhuo.wang/g4nlp/index.html) model (widely used in machine translation, question answering,
+semantic parsing, and various other NLP tasks that can be abstracted as graph-to-sequence problem and has shown superior
+performance).
+
+<!-- If you want to further improve model performance, we also support pre-trained models including [BERT](https://arxiv.org/abs/1810.04805), etc.
+ -->
+We also offer other high-level model APIs such as graph-to-tree models. If you are interested in DLG4NLP related research problems, you are very welcome to use our library and refer to our [graph4nlp survey](to_be_add).
+
+```python
+from graph4nlp.pytorch.datasets.jobs import JobsDataset
+from graph4nlp.pytorch.modules.graph_construction.dependency_graph_construction import DependencyBasedGraphConstruction
+from graph4nlp.pytorch.modules.config import get_basic_args
+from graph4nlp.pytorch.models.graph2seq import Graph2Seq
+from graph4nlp.pytorch.modules.utils.config_utils import update_values, get_yaml_config
+
+# build dataset
+jobs_dataset = JobsDataset(root_dir='graph4nlp/pytorch/test/dataset/jobs',
+                           topology_builder=DependencyBasedGraphConstruction,
+                           topology_subdir='DependencyGraph')  # You should run stanfordcorenlp at background
+vocab_model = jobs_dataset.vocab_model
+
+# build model
+user_args = get_yaml_config("examples/pytorch/semantic_parsing/graph2seq/config/dependency_gcn_bi_sep_demo.yaml")
+args = get_basic_args(graph_construction_name="node_emb", graph_embedding_name="gat", decoder_name="stdrnn")
+update_values(to_args=args, from_args_list=[user_args])
+graph2seq = Graph2Seq.from_args(args, vocab_model)
+
+# calculation
+batch_data = JobsDataset.collate_fn(jobs_dataset.train[0:12])
+
+scores = graph2seq(batch_data["graph_data"], batch_data["tgt_seq"])  # [Batch_size, seq_len, Vocab_size]
+```
+
+## Overview
+
+Our Graph4NLP computing flow is shown as below.
+<p align="center">
+<img src="static/images/graph4nlp_flow.png" width="1000" class="center" alt="logo"/>
+    <br/>
+</p>
+
+## Graph4NLP Models and Applications
+
+### Graph4NLP models
+
+- [Graph2Seq](https://github.com/graph4ai/graph4nlp/blob/master/graph4nlp/pytorch/models/graph2seq.py): a general end-to-end neural encoder-decoder model that maps an input graph to a sequence of tokens.  
+- [Graph2Tree](https://github.com/graph4ai/graph4nlp/blob/master/graph4nlp/pytorch/models/graph2tree.py): a general end-to-end neural encoder-decoder model that maps an input graph to a tree structure.
+
+### Graph4NLP applications
+
+We provide a comprehensive collection of NLP applications, together with detailed examples as follows:
+
+- [Text classification](https://github.com/graph4ai/graph4nlp/tree/master/examples/pytorch/text_classification): to give the sentence or document an appropriate label.
+- [Semantic parsing](https://github.com/graph4ai/graph4nlp/tree/master/examples/pytorch/semantic_parsing): to translate natural language into a machine-interpretable formal meaning representation.
+- [Neural machine translation](https://github.com/graph4ai/graph4nlp/tree/master/examples/pytorch/nmt): to translate a sentence in a source language to a different target language.
+- [summarization](https://github.com/graph4ai/graph4nlp/tree/master/examples/pytorch/summarization): to generate a shorter version of input texts which could preserve major meaning.
+- [KG completion](https://github.com/graph4ai/graph4nlp/tree/master/examples/pytorch/kg_completion): to predict missing relations between two existing entities in konwledge graphs.
+- [Math word problem solving](https://github.com/graph4ai/graph4nlp/tree/master/examples/pytorch/math_word_problem): to automatically solve mathematical exercises that provide background information about a problem in easy-to-understand language.
+- [Name entity recognition](https://github.com/graph4ai/graph4nlp/tree/master/examples/pytorch/name_entity_recognition): to tag entities in input texts with their corresponding type.
+- [Question generation](https://github.com/graph4ai/graph4nlp/tree/master/examples/pytorch/question_generation): to generate an valid and fluent question based on the given passage and target answer (optional).
+
+
+## Performance
+
+| Task                       |              Dataset             |   GNN    Model      | Graph construction                           | Evaluation         |          Performance          |
+|----------------------------|:--------------------------------:|:-------------------:|----------------------------------------------|--------------------|:-----------------------------:|
+| Text classification        | TRECT<br> CAirline<br> CNSST<br> |           GAT       | Dependency                                   |        Accuracy    | 0.948<br> 0.769<br> 0.538<br> |
+| Semantic Parsing           |               JOBS               |           SAGE      | Constituency                                 | Execution accuracy |             0.936             |
+| Question generation        |               SQuAD             |           GGNN       | Dependency                                      | BLEU-4             |             0.15175	            |
+| Machine translation        |              IWSLT14             |           GCN       | Dynamic                                      | BLEU-4             |             0.3212            |
+| Summarization              |             CNN(30k)             |           GCN       | Dependency                                   | ROUGE-1            |              26.4             |
+| Knowledge graph completion | Kinship                          |           GCN      | Dependency                                    | MRR                | 82.4                          |
+| Math word problem          | MAWPS  <br> MATHQA               | SAGE                | Dynamic                                      | Solution accuracy <br> Exact match  | 76.4<br>  61.07  |
 
 ## Installation
 
-**This theme requires Jekyll 3.9 to be compatible with GitHub Pages.**
+Currently, users can install Graph4NLP via **pip** or **source code**. Graph4NLP supports the following OSes:
 
-Add this line to your Jekyll site's `Gemfile`:
+- Linux-based systems (tested on Ubuntu 18.04 and later)
+- macOS (only CPU version)
+- Windows 10 (only support pytorch >= 1.8)
 
-```ruby
-gem "bulma-clean-theme"
+### Installation via pip (binaries)
+We provide pip wheels for all major OS/PyTorch/CUDA combinations. Note that we highly recommend `Windows` users refer to `Installation via source code` due to compatibility.
+
+#### Ensure that at least PyTorch (>=1.6.0) is installed:
+Note that `>=1.6.0` is ok.
+``` bash
+$ python -c "import torch; print(torch.__version__)"
+>>> 1.6.0
+```
+#### Find the CUDA version PyTorch was installed with (for GPU users):
+```bash
+$ python -c "import torch; print(torch.version.cuda)"
+>>> 10.2
 ```
 
-And add this line to your Jekyll site's `_config.yml`:
-
-```yaml
-theme: bulma-clean-theme
+#### Install the relevant dependencies:
+`torchtext` is needed since Graph4NLP relies on it to implement embeddings.
+Please pay attention to the PyTorch requirements before installing `torchtext` with the following script! For detailed version matching please refer [here](https://pypi.org/project/torchtext/).
+``` bash
+pip install torchtext # >=0.7.0
 ```
 
-And then execute:
 
-    $ bundle
+#### Install Graph4NLP
+```bash
+pip install graph4nlp${CUDA}
+```
+where `${CUDA}` should be replaced by the specific CUDA version (`none` (CPU version), `"-cu92"`, `"-cu101"`, `"-cu102"`, `"-cu110"`). The following table shows the concrete command lines. For CUDA 11.1 users, please refer to `Installation via source code`.
 
-Or install it yourself as:
+| Platform  | Command                       |
+| --------- | ----------------------------- |
+| CPU       | `pip install graph4nlp`   |
+| CUDA 9.2  | `pip install graph4nlp-cu92`  |
+| CUDA 10.1 | `pip install graph4nlp-cu101` |
+| CUDA 10.2 | `pip install graph4nlp-cu102` |
+| CUDA 11.0 | `pip install graph4nlp-cu110` |
 
-    $ gem install bulma-clean-theme
+### Installation via source code
 
-## Usage
-
-### Lang
-
-The html lang attribute is set to `en` by default but you can override this in the _config.yml file `lang: en`
-
-### Pages
-
-Create your pages as individual Markdown files and use `layout: page` for normal pages. Set the page's title and subtitle in the front matter and it will appear in the hero.
-
-#### Page Hero
-
-**New in 0.2** - Heros can now display a background image if you provide a `hero_image: /path/to/image.jpg` setting in your page front matter, or in the [defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/) in your site's `_config.yml`.
-
-You can also set the height of the hero by providing a Bulma hero height class in your front matter, such as `hero_height: is-fullwidth`. If you do not provide this, it will revert to `is-medium`.
-
-**New in 0.5.4** - If you would like to add a call to action button in the hero then add `hero_link` and `hero_link_text` to the page's front matter.
-
-**New in 0.5.7** - If you would like to hide the hero, you can set `hide_hero: true` in the page's front matter.
-
-**New in 0.7.1** - If you would like to darken the hero so the title stands out more, you can set `hero_darken: true` in the page's front matter. You can overwrite the default background colour by setting the `$hero-darken` sass variable.
-
-#### Table Of Contents
-
-**New in 0.5.8** - If you want to display a table of contents (toc) then add `toc: true` to your page's front matter. You can customise the default table of contents title by setting `toc_title: My Custom Title` in the page's front matter. 
-
-**New in 0.10.3** - If you would prefer to display the contents in the menubar at the side of the page, then use `menubar_toc: true` instead of `toc: true`. This will also override the page's `menubar` setting.
-
-### Posts
-
-If you want posts, create a `_posts` directory to store your posts as per normal Jekyll usage, with `layout: post`. Next, create a `blog` directory with an index.html file that has `layout: blog`.
-
-Set `paginate` and `paginate_path` in your site's `_config.yaml` to configure the posts per page and blog pagination path.
-
-```yaml
-paginate: 5
-paginate_path: "/blog/page:num"
+#### Ensure that at least PyTorch (>=1.6.0) is installed:
+Note that `>=1.6.0` is ok.
+``` bash
+$ python -c "import torch; print(torch.__version__)"
+>>> 1.6.0
+```
+#### Find the CUDA version PyTorch was installed with (for GPU users):
+```bash
+$ python -c "import torch; print(torch.version.cuda)"
+>>> 10.2
 ```
 
-**New in 0.2** - It will now display an image in the blog page if you set `image: /path/to/image.jpg` in your post's or page's front matter, or in the [defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/) in your site's `_config.yml`.
-
-You can also set the height of the hero by providing a Bulma hero height class in your front matter, such as `hero_height: is-fullwidth`. If you do not provide this, it will revert to `is-medium`.
-
-#### Post Excerpt and Summary
-
-By default, the blog page and the latest posts will use the automatically generated post excerpt. If you would like to override this you can set the summary in the post's front matter. 
-
-```yaml
-layout: post
-title: The post title
-summary: |-
-    This is the custom summary for the post.
-
-    It can be in **Markdown format** if required.
+#### Install the relevant dependencies:
+`torchtext` is needed since Graph4NLP relies on it to implement embeddings.
+Please pay attention to the PyTorch requirements before installing `torchtext` with the following script! For detailed version matching please refer [here](https://pypi.org/project/torchtext/).
+``` bash
+pip install torchtext # >=0.7.0
 ```
 
-#### Social Share Buttons
-
-Share buttons will be displayed on your posts unless you hide them by adding `hide_share_buttons: true` to your config file.
-
-
-### Navigation
-
-For the top navigation, create a navigation.yml file in the `_data` directory with the following format with the pages you want to include in the top navigation. You can now also add items to a dropdown menu.
-
-```yaml
-- name: Page 1
-  link: /page-1/
-- name: Blog
-  link: /blog/
-  dropdown: 
-    - name: Page 2
-      link: /page-2/
+#### Download the source code of `Graph4NLP` from Github:
+```bash
+git clone https://github.com/graph4ai/graph4nlp.git
+cd graph4nlp
+```
+#### Configure the CUDA version
+Then run `./configure` (or `./configure.bat`  if you are using Windows 10) to config your installation. The configuration program will ask you to specify your CUDA version. If you do not have a GPU, please type 'cpu'.
+```bash
+./configure
 ```
 
-For the current page to have an active class, ensure the `link:` format matches your [permalink](https://jekyllrb.com/docs/permalinks/#extensionless-permalinks) format. The above example will work with a `permalink: pretty` setting in your `_config.yml`.
+#### Install the relevant packages:
 
-#### Fixed Navbar
+Finally, install the package:
 
-To have a fixed navbar on the top or bottom of your site, you can set `fixed_navbar: top` or `fixed_navbar: bottom` respectively in your
-`_config.yml`.
-
-### Colours and Styles
-
-To overwrite the primary theme colour, set a sass variable in `assets/css/app.scss` before importing `main`.
-
-```
----
----
-$primary: #333333;
-// Import Main CSS file from theme
-@import "main";
+```shell
+python setup.py install
 ```
 
-You can overwrite any of the [Bulma initial variables](http://versions.bulma.io/0.7.0/documentation/overview/variables/) in this way as long as they are declared before the `@import "main";`.
+## Major Releases
 
-#### Theme Color Meta Tag
+| Releases | Date       | Features                                                     |
+| -------- | ---------- | ------------------------------------------------------------ |
+| v0.4.1   | 2021-06-05 | - Support the whole pipeline of Graph4NLP<br />- GraphData and Dataset support |
 
-If you want to update the theme color meta tag then set `theme_color: '#333333'` in your `_config.yml` file. 
+## New to Deep Learning on Graphs for NLP?
 
-### Sidebar Visibility
+If you want to learn more on applying Deep Learning on Graphs techniques to NLP tasks, you can refer to our survey paper which provides an overview of this existing research direction. If you want detailed reference to our library, please refer to our docs.
 
-**New in 0.2** - If you want to show the sidebar with latest posts then set `show_sidebar: true` in the page's frontmatter, or in the [defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/) in your site's `_config.yml`.
+<!-- [Docs]() | [Graph4nlp survey]() | [Related paper list]() | [Workshops]() -->
+- Documentation: [Docs](http://saizhuo.wang/g4nlp/index.html)  
+- Graph4NLP Survey: [Graph4nlp survey]()  
+- Graph4NLP Tutorials: [Graph4NLP-NAACL'21](https://www.aclweb.org/anthology/2021.naacl-tutorials.3.pdf)(Slides: [google drive](https://drive.google.com/file/d/1_7cPySt9Pzfd6MaqNihD4FkKI0qzf-s4/view?usp=sharing), [baidu netdisk](https://pan.baidu.com/s/1QeWedhMgIBjBpK0EcgXYvQ)(drs1))  
+- Graph4NLP Literature Review: [Literature Lists](https://github.com/graph4ai/graph4nlp_literature )  
+- Graph4NLP Workshops : [Workshops](https://deep-learning-graphs.bitbucket.io/dlg-kdd21/index.html)  
 
-### Menubar
-
-**New in 0.3** - The menubar gets its content from a data file in your site's `_data` directory. Simply set the name of your data file in the page's menubar setting in the frontmatter. 
-
-```yaml
-show_sidebar: false
-menubar: example_menu
-```
-
-You will probably want to disable `show_sidebar`. Otherwise there will be little room for the page content. 
-
-#### Creating a menubar data file
-
-Create a data file in the `_data` directory and use the following format (if using yml).
-
-```yaml
-- label: Example Menu
-  items:
-    - name: Home
-      link: /
-    - name: Pages
-      link: #
-      items:
-        - name: Page With Sidebar 
-          link: /page-1/
-        - name: Page Without Sidebar
-          link: /page-2/
-        - name: Page With Menubar
-          link: /page-3/
-    - name: Blog
-      link: /blog/
-```
-
-For the current page to have an active class, ensure the `link:` format matches your [permalink](https://jekyllrb.com/docs/permalinks/#extensionless-permalinks) format. The above example will work with `permalink: pretty` setting in your `_config.yml`.
-
-#### Multiple menus
-
-You may make multiple menus in the same file, separated by labels.
-
-```yaml
-- label: Menu Label
-  items:
-    - name: Example item
-      link: /example-item/
-- label: Second Menu Label
-  items:
-    - name: Parent Item
-      link: /parent-item/
-      items:
-        - name: Sublink 
-          link: /sublink/
-        - name: Sublink 2
-          link: /sublink2/
-- label: Third Menu Label
-  items:
-    - name: Another example item
-      link: /another-example-item/
-```
-
-### Tabs
-
-**New in 0.4** - `tabs` gets its content from a data file in your site's `_data` directory. Simply set the name of your data file in the page's menubar setting in the front matter. 
-
-```yaml
-title: Page with tabs
-subtitle: Demo page with tabs
-layout: page
-show_sidebar: false
-menubar: example_menu
-tabs: example_tabs
-```
-
-Tabs can be used in conjunction with menubar and/or sidebar if you wish. 
-
-#### Creating a tabs data file
-
-Create a data file in the `_data` directory and use the following format (if using yml).
-
-```yaml
-alignment: is-left
-style: is-boxed
-size: is-large
-items:
-  - name: Tabs
-    link: /page-4/
-    icon: fa-smile-wink
-  - name: Sidebar
-    link: /page-1/
-    icon: fa-square
-  - name: No Sidebar
-    link: /page-2/
-    icon: fa-ellipsis-v
-  - name: Menubar
-    link: /page-3/
-    icon: fa-bars
-```
-
-#### Settings
-
-You can control the alignment, style, and size of tabs by using the relevant [Bulma tabs classes](https://bulma.io/documentation/components/tabs/). 
-
-#### Active Tab Highlighting
-
-It will automatically mark the active tab based on the current page.
-
-#### Icons
-
-You can add icons to your tab by passing in the [Font Awesome icon class](https://fontawesome.com/icons?d=gallery). If you don't wish to show icons then simply omit the option from your yaml file.
-
-### Notifications
-
-You can include a notification in a page or post using the below include. The message is required but the status defaults to 'is-warning' and the icon defaults to 'fas fa-exclamation-circle', but can be overwritten by setting the values in the includes. The message can also be written in Markdown format.
-
-```liquid
-{% include notification.html message="This is the message for the notification" %}
-```
-
-#### Dismissible Notifications
-
-To set a notification to be dismissible, set dismissible to 'true'
-
-```liquid
-{% include notification.html
-message="This notification is dismissable"
-dismissable="true" %}
-```
-
-#### Iconless Notifications
-
-Omit the icon by setting icon to 'false'
-
-```liquid
-{% include notification.html
-message="This notification does not have an icon."
-icon="false" %}
-```
-
-### Tags
-
-To include a tag use the following include. 
-
-```liquid
-{% include tag.html tag="The tag text" %}
-```
-
-You can overwrite the default style (is-primary) by passing in the style in the include tag.
-
-```liquid
-{% include tag.html tag="The tag text" style="is-light" %}
-```
-
-### Google Analytics 
-
-**New in 0.2** - To enable Google Analytics add `google_analytics: UA-xxxxxxxx` to your `_config.yml` replacing the UA-xxxxxxxx with your Google Analytics property.
-
-### Footer
-
-**New in 0.4.1** - To add some footer links, create a yaml file in the `_data` directory using the following format.
-
-```yaml
-- name: Blog
-  link: /blog/
-- name: About
-  link: /about/
-- name: Privacy Policy
-  link: /privacy-policy/
-```
-
-Then add the name of your yaml file (without the .yml extension) into the `footer_menu` setting in the `_config.yml`.
-
-```yaml
-footer_menu: example_footer_menu
-```
-
-#### Hiding the footer
-
-**New in 0.5.2** - If you would like to hide the footer on a particular page then set `hide_footer: true` in the page's frontmatter.
-
-### Products
-
-**New in 0.5** - Now you can add simple product pages to your site using collections. 
-
-#### Product pages
-
-Start by creating a `_products` directory to hold your product pages and create a new page for each product, such as `product1.md`. In the front matter for this page you can set the standard settings, such as your title, subtitle, description (for meta-description), hero_image, as well as the additional product settings such as price, product_code, image, features, and rating. 
-
-```yaml
-title: Product 1 Name
-subtitle: Product 1 tagline here
-description: This is a product description
-hero_image: /img/hero-img.jpg
-product_code: ABC124
-layout: product
-image: https://via.placeholder.com/640x480
-price: £1.99 + VAT
-features:
-    - label: Great addition to any home
-      icon: fa-location-arrow
-    - label: Comes in a range of styles
-      icon: fa-grin-stars
-    - label: Available in multiple sizes
-      icon: fa-fighter-jet
-rating: 3
-```
-
-The text you write for the page content will be displayed as the product description. 
-
-Next, add the following to your `_config.yml` to use collections to process the product pages and output them as individual pages. 
-
-```yaml
-collections:
-  products: 
-    output: true
-    layout: product
-    image: https://via.placeholder.com/800x600
-    show_sidebar: false
-```
-
-You can also set default product page values here if you like, such as the layout or image. 
-
-#### Product Reviews
-
-To add reviews to your product page, create a `reviews` directory in the `_data` directory and add a yaml file with the name of the product_code from the product page, for example `_data/reviews/ABC124.yml`. Create the reviews using the following format:
-
-```yaml
-- name: Mr E Xample
-  rating: 4
-  title: Great product, highly recommended
-  date: 2019-01-01
-  avatar: https://bulma.io/images/placeholders/128x128.png
-  description: >
-    The product worked really well. I would recommend this to most people to use. Delivery was quick and reasonable. 
-    Would recommend this to my friends. 
-- name: Mrs R E View
-  rating: 5
-  title: Nice, really liked this
-  date: 2019-02-02
-  description: >
-    The product worked exactly as described. 
-```
-
-If you don't want to display an avatar image then a default user icon will be displayed. If you don't want to display a rating then omit it from the yaml file.
-
-#### Product Category Page
-
-To create a page listing your products you will need to create a product category page. Create a page, for example `products.md`, with the `layout: product-category` in the frontmatter. You can set the sort order of the products using `sort: title` to sort by the title, or by any setting in your product pages, such as price, rating or any custom frontmatter tags you wish to set. 
-
-```yaml
-title: Products
-subtitle: Check out our range of products
-layout: product-category
-show_sidebar: false
-sort: title
-```
-
-### Scripts
-
-**New in 0.5.2** - There are two new files within the includes directory called `head-scripts.html` and `footer-scripts.html`. These are empty files by default but allow you to add any additional JavaScript to your site, such as the script for AddThis share buttons, in the `<head>` or after the `<footer>` of the page.
-
-### Callouts
-
-**New in 0.5.4** - You can now add callouts to a page to make a landing page style layout. 
-
-* [Example of page with callouts - notice the 'calls to action' below the header.](http://www.csrhymes.com/bulma-clean-theme/landing/)
-
-#### Create a callout data file
-
-Create a data file following the below format. The style is for classes to set the background colour and sizes you would like to use of the Bulma hero container for the callouts. 
-
-**New in 0.5.7** - You can set the height of the callouts in the data file, such as `is-small`, `is-medium`, or `is-large`. If unset it will be `is-medium` by default.
-
-The items have six fields, but only the title and subtitle are required. If the icon is a brand icon, such as GitHub in the below example, set `icon_brand: true`.
-
-```yaml
-style: is-light
-height: is-medium
-items:
-  - title: Example callout 1
-    subtitle: Example subtitle 1
-    icon: fa-github
-    icon_brand: true
-    description: >
-      The example description text goes here and can be multiple lines.
-
-      For example, such as this. 
-    call_to_action_name: Call to action 1
-    call_to_action_link: /page-1/
-```
-
-#### Set the callouts in the frontmatter
-
-To display the callouts on your page, add a `callouts` property in the frontmatter and set it to the name of your data file without the extension.
-
-```yaml
-layout: page
-title: Example Landing Page
-subtitle: This is an example landing page
-callouts: example_callouts
-```
-
-### Favicon
-
-The default favicon path is `{{ site.baseurl }}/favicon.png` but you can overwrite it in the site's `_config.yml` like this `favicon: /path/to/favicon.png`
-
-### Showcases
-
-Showcases allow you to display your work to others using a simple layout. 
-
-#### Creating A Showcase Datafile
-
-Create a datafile in your site's `_data` directory in the following format. Subtitle, features and tags are not required. 
-
-The description text accepts Markdown and is run through the markdownify filter on the page.
-
-The `image_ratio` will default to `is-16by9` if it is not defined and accepts the [Bulma image](https://bulma.io/documentation/elements/image/) classes.
-
-To display GitHub Stars, Forks, and Watchers badges, add your GitHub user and repo name to the `github` setting, such as `chrisrhymes/bulma-clean-theme`.
-
-To change the default styles of the features, set `features_styles`. This uses the styles from [bulma-block-list](https://www.csrhymes.com/bulma-block-list/) npm package.
-
-```yaml
-intro: |-
-  This is some introduction text for the showcases.
-  
-  ## Example Heading
-  It can convert Markdown format
-
-items:
-  - title: Example showcase item
-    subtitle: Example subtitle
-    description: |-
-      This is the example description for this item that you are showcasing and has an image, title, description, tags and a link.
-    features:
-      - This is a feature
-      - This is a feature
-    features_styles: is-centered is-outlined is-primary
-    image: https://via.placeholder.com/1024x788
-    image_ratio: is-16by9
-    link: http://www.example.com
-    link_text: View example
-    tags: PHP,CSS,JavaScript
-    github: user/repo-name
-```
-
-#### Displaying the Showcase
-
-Set the showcase in the page's front matter to be the name of the showcase data file without the extension. This gives you the ability to create multiple showcases to be used on different pages. 
-
-```yaml
-title: Showcase
-subtitle: An example showcase page
-layout: page
-showcase: showcase_example
-show_sidebar: false
-```
-
-### Sponsors
-
-#### Sponsor link in navbar
-
-If you have a GitHub sponsors account set up, you can add your username to `gh_sponsor` in the `_config.yml` file and it will display a link to your profile on the right of the navbar.
-
-```yaml
-gh_sponsor: chrisrhymes
-```
-
-#### Creating a Sponsors Datafile
-
-If you would like to create a page to thank your sponsors then create a data file, such as my_sponsors.yml file with the following structure:
-
-```yaml
-- tier_name: Platinum Sponsors
-  size: large
-  description: |-
-    This is the description for the Platinum Tier
-  sponsors:
-    - name: Dave McDave
-      profile: https://github.com/
-    - name: Sarah Lee-Cheesecake
-      profile: https://github.com/
-- tier_name: Gold Sponsors
-  description: |-
-    This is the description for the Gold Tier
-  sponsors:
-    - name: Dave McDave
-      profile: https://github.com/
-```
-
-The `tier_name` and `description` are required. The `size` is not required, but can be overwritten to 'large' or 'small' to increase or decrease the size of the box and the text size.
- 
-The sponsors require a name, but not a profile link.
-
-#### Displaying the Sponsors
-
-To display the sponsors on your page, set the sponsors to the filename without the extension in the page's front matter
-
-```yaml
-layout: page
-title: My Sponsors Page
-sponsors: my_sponsors
-```
-
-### Gallery
-
-Display a simple image gallery on a page, with image descriptions.
-
-#### Create an image gallery data file
-
-Start by creating a gallery data file using the below format, for example `my_gallery.yml`. 
-
-```yaml
-- title: Image Gallery Title
-  images:
-    - link: https://via.placeholder.com/800x450
-      large_link: https://via.placeholder.com/1200x675
-      alt: The alt text for the image
-      description: |-
-        The image description can be written in **Markdown** if required
-      ratio: is-16by9
-    - link: https://via.placeholder.com/800x600
-      large_link: https://via.placeholder.com/1200x675
-      alt: The alt text for the image
-      description: The image description
-      ratio: is-4by3
-```
-
-* If a ratio is not provided it will default to 16 by 9. Use [Bulma image](https://bulma.io/documentation/elements/image/) classes to define the image ratio required. 
-* The description can be plaintext or it can be Markdown if required. 
-* The alt will be used as the image's alt text.
-* The large_link displays in a modal when the image is clicked.
-
-#### Displaying the gallery
-
-In your page's front matter add a gallery with the datafile's filename without the extension.
-
-```yaml
-layout: page
-title: My Image Gallery
-gallery: my_gallery
-```
-
-### Disqus
-
-Disqus comments are available for posts. To be able to use them, you need to set your disqus shortname in `_config.yml`. 
-```
-disqus.shortname=<example-com.disqus.com>  
-```
-
-Need help finding your Disqus Shortname?  [See this helpful post by Disqus on the matter.](https://help.disqus.com/en/articles/1717111-what-s-a-shortname)  
-
-Then you need to set your Jekyll environment to production: 
-
-```JEKYLL_ENV=production bundle exec jekyll build```. 
-
-Comments are enabled by default. If you want to disable them, set in the front matter this setting: 
-
-```markdown
-comments: false
-```
-
-### Recipe
-
-You can make a single page using the recipe layout, or you can use it in your blog by specifying the `layout: recipe` instead of post.
-
-You probably want to hide the sidebar, so the recipe takes up the whole page width. If you add any additional content to the page it will appear below the recipe details.
-
-Create a list in the front matter for the ingredients, then the method steps and it will automatically be added to the page.
-
-The front matter will also be added to the page as schema data that is used by search engines. Please see the below example for all of the schema options available.
-
-```yaml
-layout: recipe
-title: An Example Recipe Page
-subtitle: Tastes great and easy to cook
-author: CS Rhymes
-date: 2021-03-02
-show_sidebar: false
-image: /bulma-clan-theme/img/recipe-example.jpg
-hero_image: /bulma-clean-theme/img/recipe-example.jpg
-ingredients:
-    - 1tsp vegetable oil
-    - 2 Carrots, finely diced
-    - 1 Onion, finely dices
-    - 1 Celery stick, finely diced
-    - 2 Cloves of Garlic, crushed
-    - 400g lean Minced Beef
-    - 400g tin of Chopped Tomatoes
-    - 2tbsp Tomato Puree
-    - 300ml Beef Stock
-    - 1tsp Worcestershire Sauce
-    - 2tsp Italian Herbs
-    - Salt and Pepper
-method:
-    - Heat the vegetable oil in a large pan on a medium heat, then add the carrots, onion and celery and cook for five to ten minutes to soften, stirring occasionally
-    - Add the crushed garlic and cook for 2 more minutes, stiffing occasionally
-    - Add the minced beef to the pan, breaking it up with a wooden spoon and cook until browned off
-    - Add the chopped tomatoes, tomato puree, beef stock, worcestershire sauce and italian herbs and stir. Add a pinch of salt and pepper then stir through
-    - Bring to a gentle simmer and cook for 30 minutes
-prep_time: PT0H10M
-cook_time: PT1H
-total_time: PT1H10M
-keywords: recipe,cooking
-recipe_yield: 4
-recipe_category: Main course
-recipe_cuisine: Italian
-calories: 500 calories
-```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/chrisrhymes/bulma-clean-theme. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Please let us know if you encounter a bug or have any suggestions by filing an issue.
 
-## Development
+We welcome all contributions from bug fixes to new features and extensions.
 
-To set up your environment to develop this theme, run `bundle install`.
+We expect all contributions discussed in the issue tracker and going through PRs. 
 
-Your theme is set up just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+## Citation
+
+If you found this code useful, please consider citing the following paper (please stay tuned!).
+
+<!-- Yu Chen, Lingfei Wu and Mohammed J. Zaki. **"Iterative Deep Graph Learning for Graph Neural Networks: Better and Robust
+Node Embeddings."** In *Proceedings of the 34th Conference on Neural Information Processing Systems (NeurIPS 2020), Dec
+6-12, 2020.*
+
+    @article{chen2020iterative,
+      title={Iterative Deep Graph Learning for Graph Neural Networks: Better and Robust Node Embeddings},
+      author={Chen, Yu and Wu, Lingfei and Zaki, Mohammed},
+      journal={Advances in Neural Information Processing Systems},
+      volume={33},
+      year={2020}
+    } -->
+
+## Team
+Graph4AI Team. Lingfei Wu, Yu Chen, Kai Shen, Xiaojie Guo, Hanning Gao, Shucheng Li, Saizhuo Wang
 
 ## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
+Graph4NLP uses Apache License 2.0.
