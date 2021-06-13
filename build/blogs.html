@@ -72,7 +72,7 @@
     <link rel="stylesheet" href="static/css/lazy_load.css"/>
     <link rel="stylesheet" href="static/css/typeahead.css"/>
 
-    <title>DLG4NLP</title>
+    <title>GraphGen</title>
     
 </head>
 
@@ -84,13 +84,13 @@
         id="main-nav"
 >
     <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img
-                    class="logo" src="static/images/G4L-logo.png"
-                    height="auto"
-            width="200px"
-            />
-        </a>
+<!--        <a class="navbar-brand" href="index.html">-->
+<!--            <img-->
+<!--                    class="logo" src="static/images/logo.png"-->
+<!--                    height="auto"-->
+<!--            width="40px"-->
+<!--            />-->
+<!--        </a>-->
         
         <button
                 class="navbar-toggler"
@@ -114,28 +114,15 @@
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">Paper</a>
+                    <a class="nav-link" href="index.html">Paper</a>
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://deep-learning-graphs.bitbucket.io/dlg-kdd21/index.html">Workshop</a>
+                    <a class="nav-link" href="dataset.html">Dataset</a>
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://drive.google.com/file/d/1_7cPySt9Pzfd6MaqNihD4FkKI0qzf-s4/view
-">Tutorial</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp_demo">Demo</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="http://saizhuo.wang/g4nlp/index.html">Docs</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">GitHub</a>
+                    <a class="nav-link" href="task.html">Task</a>
                 </li>
                 
                 <li class="nav-item ">
@@ -143,7 +130,7 @@
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">Blog</a>
+                    <a class="nav-link" href="index.html">Blog</a>
                 </li>
                 
             </ul>
@@ -154,6 +141,12 @@
 
 
 <!-- User Overrides -->
+
+<head>
+    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="static/css/jemdoc.css" type="text/css" />
+</head>
 
 <style>
   .back {
@@ -169,9 +162,9 @@
 <div class="jumbotron jumbotron-fluid back" style="padding-bottom: 20px;">
   <div class="row header p-6 m-5">
     <div class="p-1 mx-auto text-center text-white col-md-9 col-sm-12">
-      <h2>
-        Deep Learning on Graphs for Natural Language Processing
-      </h2>
+      <h4>
+        GraphGen: A Large-scale Graph Generation Dataset Collection
+      </h4>
     </div>
   </div>
 </div>
@@ -186,22 +179,37 @@
     <div class="content">
         
 
-<h1>About</h1>
-Deep learning has become the dominant approach in coping with various tasks in Natural Language Processing (NLP) today, especially when operated on large-scale text corpora. Conventionally, text sequences are considered as a bag of tokens such as BoW and TF-IDF in NLP tasks. With recent success of Word Embeddings techniques (Mikolov et al., 2013; Pennington et al., 2014), sentences are typically represented as a sequence of tokens in NLP tasks. Hence, popular deep learning techniques such as recurrent neural networks (Schuster and Paliwal, 1997) and convolutional neural networks (Krizhevsky et al., 2012) have been widely applied for modeling text sequence.
-<br>
-However, there is a rich variety of NLP problems that can be best expressed with a graph structure. For instance, the sentence structural information in text sequence (i.e. syntactic parsing trees like dependency and constituency parsing trees) can be exploited to augment original sequence data by incorporating the task-specific knowledge. Similarly, the semantic information in sequence data (i.e. semantic parsing graphs like Abstract Meaning Representation graphs and Information Extraction graphs) can be leveraged to enhance original sequence data as well. Therefore, these graphstructured data can encode complicated pairwise relationships between entity tokens for learning more informative representations.
-<br>
-Unfortunately, deep learning techniques that were disruptive for Euclidean data (e.g, images) or sequence data (e.g, text) are not immediately applicable to graph-structured data, due to the complexity of graph data such as irregular structure and varying size of node neighbors. As a result, this gap has driven a tide in research for deep learning on graphs, especially in development of graph neural networks (GNNs) (Kipf and Welling, 2016; Defferrard et al., 2016; Hamilton et al., 2017a).
-<br>
-This wave of research at the intersection of deep learning on graphs and NLP has influenced a variety of NLP tasks. There has seen a surge of interests in applying and developing different GNNs variants and achieved considerable success in many NLP tasks, ranging from classification tasks like sentence classification (Henaff et al., 2015; Huang and Carley, 2019), semantic role labeling Luo and Zhao (2020); Gui et al. (2019), and relation extraction (Qu et al., 2020; Sahu et al., 2019), to generation tasks like machine translation (Bastings et al., 2017; Beck et al., 2018), question generation (Pan et al., 2020; Sachan et al., 2020), and summarization (Fernandes et al., 2019; Yasunaga et al., 2017). Despite the successes these existing research has achieved, deep learning on graphs for NLP still encounters many challenges, namely,
-<br>
+<h2>About</h2>
+Recently, the advances in deep graph learning have enabled a large amount of applications related to graph-structured data, from recommendation system, social network analysis to molecular property prediction. Essentially, modeling graph-structured data with deep learning is attracting more and more attention and becoming a prevalent research hot spot. Specifically, deep graph generation brings unprecedented opportunities in generating/modeling/designing new graph structures (e.g. molecules) and understanding the learnt representation by deep graph learning models. However, it faces huge challenges, such as generalizability to different types of graphs, modeling graphs with constraints, etc. We observe one of the most important challenges which prevent the advances of the community is the lack of data in multiple dimensions, which includes but not limited to, of various types, of various domains, of various application areas. To reach this goal, we release <b>GraphGen</b>, a large-scale graph generation dataset collection. We collect, process, and open-source diverse types of graph-structured data to help the community advance graph generative models for various types of graphs.
+
+<h2>Contents</h2>
 <ul>
-<li>Automatically transforming original text sequence data into highly graph-structured data. Such challenge is profound in NLP since most of the NLP tasks involving using the text sequences as the original inputs. Automatic graph construction from the text sequence to utilize the underlying structural information is a crucial step in utilizing graph neural networks for NLP problems.</li>
-<li>Properly determining graph representation learning techniques. It is critical to come up with specially-designed GNNs to learn the unique characteristics of different graph-structures data such as undirected, directed, multi-relational and heterogeneous graphs.</li>
-<li>Effectively modeling complex data. Such challenge is important since many NLP tasks involve learning the mapping between the graph-based inputs and other highly structured output data such as sequences, trees, as well as graph data with multi-types in both nodes and edges.</li>
+    <li>Molecular Graphs [<a href='molecule.html'>Detail</a>]</li>
+    <li>Proteins [<a href='protein.html'>Detail</a>]</li>
+    <li>Brain Networks [<a href='brain.html'>Detail</a>]</li>
+    <li>Physical Simulation Networks [<a href='physics.html'>Detail</a>]</li>
+    <li>Collaboration Networks [<a href='collab.html'>Detail</a>]</li>
+    <li>Circuit Networks [<a href='circuit.html'>Detail</a>]</li>
+    <li>Traffic Networks [<a href='traffic.html'>Detail</a>]</li>
+    <li>Authentication Networks [<a href='authen.html'>Detail</a>]</li>
+    <li>IoT Networks [<a href='IoT.html'>Detail</a>]</li>
+    <li>Skeleton Graphs [<a href='skeleton.html'>Detail</a>]</li>
+    <li>Scene Graphs [<a href='scene.html'>Detail</a>]</li>
+    <li>Synthetic Networks [<a href='synthetic.html'>Detail</a>]</li>
 </ul>
-<h1>Goals</h1>
-We aim to build a community of deep graph learning for natural language processing (DLG4NLP). 
+
+<h2>Citation</h2>
+<p>Please cite us if you use GraphGen in your work:</p>
+<div class="infoblock">
+    <div class="blockcontent">
+        <p>GraphGen: A Large-scale Graph Generative Dataset Collection. Yuanqi Du, Xiaojie Guo, Hengning Cao, Liang Zhao, 2021.
+        </p>
+</div></div>
+
+<h2>Contact</h2>
+<ui>
+    <li>For any question, please contact <a href="https://yuanqidu.github.io/">Yuanqi Du</a> at <a href=mailto:ydu6@gmu.edu>ydu6@gmu.edu</a>.</li>
+</ui>
 
 
     </div>
@@ -229,7 +237,7 @@ We aim to build a community of deep graph learning for natural language processi
 <footer class="footer bg-light p-4">
     <div class="container">
         <p class="float-right"><a href="#">Back to Top</a></p>
-        <p class="text-center">© 2020 DLG4NLP Team</p>
+        <p class="text-center">© 2020 GraphGen Team</p>
     </div>
 </footer>
 

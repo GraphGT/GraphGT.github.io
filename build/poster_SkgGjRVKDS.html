@@ -74,7 +74,7 @@
     <link rel="stylesheet" href="static/css/lazy_load.css"/>
     <link rel="stylesheet" href="static/css/typeahead.css"/>
 
-    <title>DLG4NLP: Towards Stabilizing Batch Statistics in Backward Propagation of Batch Normalization</title>
+    <title>GraphGen: Towards Stabilizing Batch Statistics in Backward Propagation of Batch Normalization</title>
     
 <meta name="citation_title" content="Towards Stabilizing Batch Statistics in Backward Propagation of Batch Normalization"/>
 
@@ -92,7 +92,7 @@
 
 <meta name="citation_publication_date" content=""/>
 <meta name="citation_conference_title"
-      content="Deep Learning On Graphs For Natural Language Processing"/>
+      content="Graphgen: A Large-Scale Graph Generation Dataset Collection"/>
 <meta name="citation_inbook_title" content=""/>
 <meta name="citation_abstract" content="Batch Normalization (BN) is one of the most widely used techniques in Deep Learning field. But its performance can awfully degrade with insufficient batch size. This weakness limits the usage of BN on many computer vision tasks like detection or segmentation, where batch size is usually small due to the constraint of memory consumption. Therefore many modified normalization techniques have been proposed, which either fail to restore the performance of BN completely, or have to introduce additional nonlinear operations in inference procedure and increase huge consumption. In this paper, we reveal that there are two extra batch statistics involved in backward propagation of BN, on which has never been well discussed before. The extra batch statistics associated with gradients also can severely affect the training of deep neural network. Based on our analysis, we propose a novel normalization method, named Moving Average Batch Normalization (MABN). MABN can completely restore the performance of vanilla BN in small batch cases, without introducing any additional nonlinear operations in inference procedure. We prove the benefits of MABN by both theoretical analysis and experiments. Our experiments demonstrate the effectiveness of MABN in multiple computer vision tasks including ImageNet and COCO. The code has been released in https://github.com/megvii-model/MABN."/>
 
@@ -117,13 +117,13 @@
         id="main-nav"
 >
     <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img
-                    class="logo" src="static/images/G4L-logo.png"
-                    height="auto"
-            width="200px"
-            />
-        </a>
+<!--        <a class="navbar-brand" href="index.html">-->
+<!--            <img-->
+<!--                    class="logo" src="static/images/logo.png"-->
+<!--                    height="auto"-->
+<!--            width="40px"-->
+<!--            />-->
+<!--        </a>-->
         
         <button
                 class="navbar-toggler"
@@ -147,28 +147,15 @@
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">Paper</a>
+                    <a class="nav-link" href="index.html">Paper</a>
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://deep-learning-graphs.bitbucket.io/dlg-kdd21/index.html">Workshop</a>
+                    <a class="nav-link" href="dataset.html">Dataset</a>
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://drive.google.com/file/d/1_7cPySt9Pzfd6MaqNihD4FkKI0qzf-s4/view
-">Tutorial</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp_demo">Demo</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="http://saizhuo.wang/g4nlp/index.html">Docs</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">GitHub</a>
+                    <a class="nav-link" href="task.html">Task</a>
                 </li>
                 
                 <li class="nav-item ">
@@ -176,7 +163,7 @@
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">Blog</a>
+                    <a class="nav-link" href="index.html">Blog</a>
                 </li>
                 
             </ul>
@@ -392,7 +379,7 @@
 <footer class="footer bg-light p-4">
     <div class="container">
         <p class="float-right"><a href="#">Back to Top</a></p>
-        <p class="text-center">© 2020 DLG4NLP Team</p>
+        <p class="text-center">© 2020 GraphGen Team</p>
     </div>
 </footer>
 

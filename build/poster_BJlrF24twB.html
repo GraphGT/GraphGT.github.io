@@ -74,7 +74,7 @@
     <link rel="stylesheet" href="static/css/lazy_load.css"/>
     <link rel="stylesheet" href="static/css/typeahead.css"/>
 
-    <title>DLG4NLP: BackPACK: Packing more into Backprop</title>
+    <title>GraphGen: BackPACK: Packing more into Backprop</title>
     
 <meta name="citation_title" content="BackPACK: Packing more into Backprop"/>
 
@@ -86,7 +86,7 @@
 
 <meta name="citation_publication_date" content=""/>
 <meta name="citation_conference_title"
-      content="Deep Learning On Graphs For Natural Language Processing"/>
+      content="Graphgen: A Large-Scale Graph Generation Dataset Collection"/>
 <meta name="citation_inbook_title" content=""/>
 <meta name="citation_abstract" content="Automatic differentiation frameworks are optimized for exactly one thing: computing the average mini-batch gradient. Yet, other quantities such as the variance of the mini-batch gradients or many approximations to the Hessian can, in theory, be computed efficiently, and at the same time as the gradient. While these quantities are of great interest to researchers and practitioners, current deep learning software  does  not  support  their  automatic  calculation.  Manually  implementing them is burdensome, inefficient if done naively, and the resulting code is rarely shared.  This hampers  progress  in  deep learning,  and  unnecessarily  narrows  research  to  focus  on  gradient  descent  and  its  variants;  it  also  complicates  replication studies and comparisons between newly developed methods that require those quantities, to the point of impossibility. To address this problem, we introduce  BackPACK, an efficient framework built on top of  PyTorch, that extends the backpropagation algorithm to extract additional information from first-and second-order derivatives. Its capabilities are illustrated by benchmark reports for computing additional quantities on deep neural networks, and an example application by testing several recent curvature approximations for optimization."/>
 
@@ -105,13 +105,13 @@
         id="main-nav"
 >
     <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img
-                    class="logo" src="static/images/G4L-logo.png"
-                    height="auto"
-            width="200px"
-            />
-        </a>
+<!--        <a class="navbar-brand" href="index.html">-->
+<!--            <img-->
+<!--                    class="logo" src="static/images/logo.png"-->
+<!--                    height="auto"-->
+<!--            width="40px"-->
+<!--            />-->
+<!--        </a>-->
         
         <button
                 class="navbar-toggler"
@@ -135,28 +135,15 @@
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">Paper</a>
+                    <a class="nav-link" href="index.html">Paper</a>
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://deep-learning-graphs.bitbucket.io/dlg-kdd21/index.html">Workshop</a>
+                    <a class="nav-link" href="dataset.html">Dataset</a>
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://drive.google.com/file/d/1_7cPySt9Pzfd6MaqNihD4FkKI0qzf-s4/view
-">Tutorial</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp_demo">Demo</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="http://saizhuo.wang/g4nlp/index.html">Docs</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">GitHub</a>
+                    <a class="nav-link" href="task.html">Task</a>
                 </li>
                 
                 <li class="nav-item ">
@@ -164,7 +151,7 @@
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">Blog</a>
+                    <a class="nav-link" href="index.html">Blog</a>
                 </li>
                 
             </ul>
@@ -347,7 +334,7 @@
 <footer class="footer bg-light p-4">
     <div class="container">
         <p class="float-right"><a href="#">Back to Top</a></p>
-        <p class="text-center">© 2020 DLG4NLP Team</p>
+        <p class="text-center">© 2020 GraphGen Team</p>
     </div>
 </footer>
 

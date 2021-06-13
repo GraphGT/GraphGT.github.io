@@ -74,7 +74,7 @@
     <link rel="stylesheet" href="static/css/lazy_load.css"/>
     <link rel="stylesheet" href="static/css/typeahead.css"/>
 
-    <title>DLG4NLP: Large Batch Optimization for Deep Learning: Training BERT in 76 minutes</title>
+    <title>GraphGen: Large Batch Optimization for Deep Learning: Training BERT in 76 minutes</title>
     
 <meta name="citation_title" content="Large Batch Optimization for Deep Learning: Training BERT in 76 minutes"/>
 
@@ -100,7 +100,7 @@
 
 <meta name="citation_publication_date" content=""/>
 <meta name="citation_conference_title"
-      content="Deep Learning On Graphs For Natural Language Processing"/>
+      content="Graphgen: A Large-Scale Graph Generation Dataset Collection"/>
 <meta name="citation_inbook_title" content=""/>
 <meta name="citation_abstract" content="Training large deep neural networks on massive datasets is  computationally very challenging. There has been recent surge in interest in using large batch stochastic optimization methods to tackle this issue. The most prominent algorithm in this line of research is LARS, which by  employing layerwise adaptive learning rates trains ResNet on ImageNet in a few minutes. However, LARS performs poorly for attention models like BERT, indicating that its performance gains are not consistent across tasks. In this paper, we first study a principled layerwise adaptation strategy to accelerate training of deep neural networks using large mini-batches. Using this strategy, we develop a new layerwise adaptive large batch optimization technique called LAMB; we then provide convergence analysis of LAMB as well as LARS, showing convergence to a stationary point in general nonconvex settings. Our empirical results demonstrate the superior performance of LAMB across various tasks such as BERT and ResNet-50 training with very little hyperparameter tuning. In particular, for BERT training, our optimizer enables use of very large batch sizes of 32868 without any degradation of performance.  By increasing the batch size to the memory limit of a TPUv3 Pod, BERT training time can be reduced from 3 days to just 76 minutes."/>
 
@@ -129,13 +129,13 @@
         id="main-nav"
 >
     <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img
-                    class="logo" src="static/images/G4L-logo.png"
-                    height="auto"
-            width="200px"
-            />
-        </a>
+<!--        <a class="navbar-brand" href="index.html">-->
+<!--            <img-->
+<!--                    class="logo" src="static/images/logo.png"-->
+<!--                    height="auto"-->
+<!--            width="40px"-->
+<!--            />-->
+<!--        </a>-->
         
         <button
                 class="navbar-toggler"
@@ -159,28 +159,15 @@
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">Paper</a>
+                    <a class="nav-link" href="index.html">Paper</a>
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://deep-learning-graphs.bitbucket.io/dlg-kdd21/index.html">Workshop</a>
+                    <a class="nav-link" href="dataset.html">Dataset</a>
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://drive.google.com/file/d/1_7cPySt9Pzfd6MaqNihD4FkKI0qzf-s4/view
-">Tutorial</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp_demo">Demo</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="http://saizhuo.wang/g4nlp/index.html">Docs</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">GitHub</a>
+                    <a class="nav-link" href="task.html">Task</a>
                 </li>
                 
                 <li class="nav-item ">
@@ -188,7 +175,7 @@
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">Blog</a>
+                    <a class="nav-link" href="index.html">Blog</a>
                 </li>
                 
             </ul>
@@ -436,7 +423,7 @@
 <footer class="footer bg-light p-4">
     <div class="container">
         <p class="float-right"><a href="#">Back to Top</a></p>
-        <p class="text-center">© 2020 DLG4NLP Team</p>
+        <p class="text-center">© 2020 GraphGen Team</p>
     </div>
 </footer>
 

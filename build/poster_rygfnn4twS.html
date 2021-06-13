@@ -74,7 +74,7 @@
     <link rel="stylesheet" href="static/css/lazy_load.css"/>
     <link rel="stylesheet" href="static/css/typeahead.css"/>
 
-    <title>DLG4NLP: AutoQ: Automated Kernel-Wise Neural Network Quantization</title>
+    <title>GraphGen: AutoQ: Automated Kernel-Wise Neural Network Quantization</title>
     
 <meta name="citation_title" content="AutoQ: Automated Kernel-Wise Neural Network Quantization"/>
 
@@ -90,7 +90,7 @@
 
 <meta name="citation_publication_date" content=""/>
 <meta name="citation_conference_title"
-      content="Deep Learning On Graphs For Natural Language Processing"/>
+      content="Graphgen: A Large-Scale Graph Generation Dataset Collection"/>
 <meta name="citation_inbook_title" content=""/>
 <meta name="citation_abstract" content="Network quantization is one of the most hardware friendly techniques to enable the deployment of convolutional neural networks (CNNs) on low-power mobile devices. Recent network quantization techniques quantize each weight kernel in a convolutional layer independently for higher inference accuracy, since the weight kernels in a layer exhibit different variances and hence have different amounts of redundancy. The quantization bitwidth or bit number (QBN) directly decides the inference accuracy, latency, energy and hardware overhead. To effectively reduce the redundancy and accelerate CNN inferences, various weight kernels should be quantized with different QBNs. However, prior works use only one QBN to quantize each convolutional layer or the entire CNN, because the design space of searching a QBN for each weight kernel is too large. The hand-crafted heuristic of the kernel-wise QBN search is so sophisticated that domain experts can obtain only sub-optimal results. It is difficult for even deep reinforcement learning (DRL) DDPG-based agents to find a kernel-wise QBN configuration that can achieve reasonable inference accuracy. In this paper, we propose a hierarchical-DRL-based kernel-wise network quantization technique, AutoQ, to automatically search a QBN for each weight kernel, and choose another QBN for each activation layer. Compared to the models quantized by the state-of-the-art DRL-based schemes, on average, the same models quantized by AutoQ reduce the inference latency by 54.06%, and decrease the inference energy consumption by 50.69%, while achieving the same inference accuracy."/>
 
@@ -115,13 +115,13 @@
         id="main-nav"
 >
     <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img
-                    class="logo" src="static/images/G4L-logo.png"
-                    height="auto"
-            width="200px"
-            />
-        </a>
+<!--        <a class="navbar-brand" href="index.html">-->
+<!--            <img-->
+<!--                    class="logo" src="static/images/logo.png"-->
+<!--                    height="auto"-->
+<!--            width="40px"-->
+<!--            />-->
+<!--        </a>-->
         
         <button
                 class="navbar-toggler"
@@ -145,28 +145,15 @@
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">Paper</a>
+                    <a class="nav-link" href="index.html">Paper</a>
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://deep-learning-graphs.bitbucket.io/dlg-kdd21/index.html">Workshop</a>
+                    <a class="nav-link" href="dataset.html">Dataset</a>
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://drive.google.com/file/d/1_7cPySt9Pzfd6MaqNihD4FkKI0qzf-s4/view
-">Tutorial</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp_demo">Demo</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="http://saizhuo.wang/g4nlp/index.html">Docs</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">GitHub</a>
+                    <a class="nav-link" href="task.html">Task</a>
                 </li>
                 
                 <li class="nav-item ">
@@ -174,7 +161,7 @@
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://github.com/graph4ai/graph4nlp">Blog</a>
+                    <a class="nav-link" href="index.html">Blog</a>
                 </li>
                 
             </ul>
@@ -385,7 +372,7 @@
 <footer class="footer bg-light p-4">
     <div class="container">
         <p class="float-right"><a href="#">Back to Top</a></p>
-        <p class="text-center">© 2020 DLG4NLP Team</p>
+        <p class="text-center">© 2020 GraphGen Team</p>
     </div>
 </footer>
 
