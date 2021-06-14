@@ -56,6 +56,9 @@ def _data():
 
 @app.route("/")
 def index():
+    data = _data()
+    data["readme"] = open("README.md").read()
+    data["team"] = site_data["team"]["team"]
     return redirect("/index.html")
 
 
@@ -70,7 +73,6 @@ def favicon():
 @app.route("/index.html")
 def home():
     data = _data()
-<<<<<<< HEAD
     data["team"] = site_data["team"]["team"]
     return render_template("index.html", **data)
 
@@ -134,12 +136,6 @@ def synthetic():
     data = _data()
     return render_template("synthetic.html", **data)
 
-=======
-    data["readme"] = open("README.md").read()
-    data["team"] = site_data["team"]["team"]
-    return render_template("index.html", **data)
-
->>>>>>> b84aaa2a2fb19319ac30093789d28024b9bad4b4
 
 #@app.route("/help.html")
 #def about():
@@ -150,10 +146,7 @@ def synthetic():
 @app.route("/team.html")
 def team():
     data = _data()
-<<<<<<< HEAD
-=======
     data["readme"] = open("README.md").read()
->>>>>>> b84aaa2a2fb19319ac30093789d28024b9bad4b4
     data["team"] = site_data["team"]["team"]
     return render_template("team.html", **data)
 
@@ -165,20 +158,14 @@ def papers():
 #    data["papers"] = site_data["papers"]
 #    return render_template("papers.html", **data)
     data = _data()
-<<<<<<< HEAD
-=======
     data["readme"] = open("README.md").read()
->>>>>>> b84aaa2a2fb19319ac30093789d28024b9bad4b4
     data["team"] = site_data["team"]["team"]
     return render_template("index.html", **data)
 
 @app.route("/blogs.html")
 def blogs():
     data = _data()
-<<<<<<< HEAD
-=======
     data["readme"] = open("README.md").read()
->>>>>>> b84aaa2a2fb19319ac30093789d28024b9bad4b4
     data["team"] = site_data["team"]["team"]
     return render_template("index.html", **data)
 
