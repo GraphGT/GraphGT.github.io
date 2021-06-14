@@ -1,0 +1,209 @@
+{% set active_page = "Home" %}
+{% extends "base.html" %}
+
+{% block top %}
+<head>
+    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="static/css/jemdoc.css" type="text/css" />
+</head>
+
+<style>
+  .back {
+    background: url("{{config.background_image}}") no-repeat center;
+    background-size: cover;
+  }
+  .back h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+  }
+</style>
+
+<div class="jumbotron jumbotron-fluid back" style="padding-bottom: 20px;">
+  <div class="row header p-6 m-5">
+    <div class="toptitle p-1 mx-auto text-center text-white col-md-9 col-sm-12">
+      <h4>
+          Molecular Graphs
+      </h4>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<h2>Introduction</h2>
+
+
+<h2>QM9</h2>
+<ul>
+    <li>Description: QM9 dataset is an enumeration of around 134k stable organic molecules with up to 9 heavy atoms (carbon, oxygen, nitrogen and fluorine). As no filtering is applied, the molecules in this dataset only reflect basic structural constraints.</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+        </tr>
+        <tr>
+            <td>QM9</td>
+            <td>Molecules</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+        </tr>
+    </table>
+    <li>Download link:</li>
+    <li>Acknowlegement: <br>R. Ramakrishnan, P. O. Dral, M. Rupp, and O. A. Von Lilienfeld, “Quantum chemistry structures and properties of 134 kilo molecules,” Scientific data, vol. 1, no. 1, pp. 1–7, 2014.</li>
+</ul>
+
+<h2>ZINC</h2>
+<ul>
+    <li>Description: This dataset is a curated set of 250k commercially available drug-like chemical compounds. On average, these molecules are bigger (about 23 heavy atoms) and structurally more complex than the molecules in QM9.</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+        </tr>
+        <tr>
+            <td>ZINC</td>
+            <td>Molecules</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+        </tr>
+    </table>
+    <li>Download link:</li>
+    <li>Acknowlegement: <br>J. J. Irwin, T. Sterling, M. M. Mysinger, E. S. Bolstad, and R. G. Coleman, “Zinc: a free tool to discover chemistry for biology,” Journal of chemical information and modeling, vol. 52, no. 7, pp. 1757–1768, 2012.</li>
+</ul>
+
+<h2>MOSES</h2>
+<ul>
+    <li>Description: Molecular Sets (MOSES) is a benchmark platform for distribution learning based molecule generation. Within this benchmark, MOSES provides a cleaned dataset of molecules that are ideal of optimization. It is processed from the ZINC Clean Leads dataset.</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+        </tr>
+        <tr>
+            <td>MOSES</td>
+            <td>Molecules</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+        </tr>
+    </table>
+    <li>Download link:</li>
+    <li>Acknowlegement: <br>Polykovskiy, Daniil, et al. "Molecular sets (MOSES): a benchmarking platform for molecular generation models." Frontiers in pharmacology 11 (2020).</li>
+</ul>
+
+<h2>ChEMBL</h2>
+<ul>
+    <li>Description: ChEMBL is a manually curated database of bioactive molecules with drug-like properties. It brings together chemical, bioactivity and genomic data to aid the translation of genomic information into effective new drugs.</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+        </tr>
+        <tr>
+            <td>ChEMBL</td>
+            <td>Molecules</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+        </tr>
+    </table>
+    <li>Download link:</li>
+    <li>Acknowlegement: <br>Mendez, David, et al. “ChEMBL: towards direct deposition of bioassay data.” Nucleic acids research 47.D1 (2019): D930-D940.</li>
+</ul>
+
+<h2>CEPDB</h2>
+<ul>
+    <li>Description: This dataset consists of organic molecules with an emphasis on photo-voltaic applications. The contained molecules have 28 heavy atoms on average and contain six to seven rings each.</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+        </tr>
+        <tr>
+            <td>CEPDB</td>
+            <td>Molecules</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+        </tr>
+    </table>
+    <li>Download link:</li>
+    <li>Acknowlegement: <br>J.Hachmann,R.Olivares-Amaya,S.Atahan-Evrenk,C.Amador- Bedolla, R. S. Sa ́nchez-Carrera, A. Gold-Parker, L. Vogt, A. M. Brockway, and A. Aspuru-Guzik, “The harvard clean energy project: large-scale computational screening and design of or- ganic photovoltaics on the world community grid,” The Journal of Physical Chemistry Letters, vol. 2, no. 17, pp. 2241–2251, 2011.</li>
+</ul>
+
+<h2>Molecule Optimization</h2>
+<ul>
+    <li>Description: TBA</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+        </tr>
+        <tr>
+            <td>MolOpt</td>
+            <td>Molecules</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+        </tr>
+    </table>
+    <li>Download link:</li>
+    <li>Acknowlegement: <br>Jin, W., Yang, K., Barzilay, R., Jaakkola, T. (2018). Learning multimodal graph-to-graph translation for molecular optimization. arXiv preprint arXiv:1812.01070.</li>
+</ul>
+
+<h2>Chemical Reaction</h2>
+<ul>
+    <li>Description: There are totally 7180 pairs of reactant anf product molecule graph in the dataset. The number of nodes (atoms) of molecule ranges from 9 to 20, and the number of atoms for each pair is recorded and stored in the file "Num_nodes.cxv". The file folder "mol_edge" store all the adjacent matrix for the input and target graph. The dimension of the adjacent matrix is 20 by 20, and for those graphs whose nodes are less than 20, we use zero to pad. The values in adjacent matrix is in [0,1,2,3,4] representing five bond types (none, single, double, triple, or aromatic). The folder "Mol_nodes" stores the node features for all the nodes in each graph. The node feature indicates the atom type (82 types) which are embedded by one-hot vector with 82 dimensions. In this problem setting, the node feature remains unchanged during the translation.</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+        </tr>
+        <tr>
+            <td>ChemReact</td>
+            <td>Molecules</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+        </tr>
+    </table>
+    <li>Download link: <a href="https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EZzBXqVYGQZBijWzB6XV-k4BYrQjJp4J2GKDPlhYdDfkqw">Mol_edge</a>, <a href="https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EWPhBYlZ8x1Ptn5esMqaKOABa11TAt_7UJrYmSGHBowpBg">Mol_node</a>, <a href="https://exchangelabsgmu-my.sharepoint.com/:x:/g/personal/xguo7_masonlive_gmu_edu/EVLlh7btdvxPgsZaym_TyA4BQnyqE_oNE_jfEtM2v1gbTA">Num_node</a><br>
+        More chemical reaction data can be found in <a href="https://github.com/wengong-jin/nips17-rexgen">USPTO-15K</a></li>
+    <li>Acknowlegement: <br>Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. Inhe 19th International Conference on Data Mining (ICDM 2019).<br>
+        D. Lowe, “Patent reaction extraction: downloads,” 2014.</li>
+</ul>
+
+
+{% endblock %}

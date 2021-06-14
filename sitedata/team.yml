@@ -1,0 +1,23 @@
+team:
+  - role: Developer
+    name: Yuanqi Du
+    aff: George Mason University
+    im: static/images/yuanqi.jpeg
+    link: https://yuanqidu.github.io/
+  - role: Developer
+    name: Xiaojie GUo
+    aff: JD.COM Silicon Valley Research Center
+    im: static/images/xiaojie.jpeg
+    link: https://sites.google.com/view/xiaojie-guo-personal-site
+  - role: Developer
+    name: Hengning Cao
+    aff: George Mason University
+    im: static/images/hengning.jpeg
+    link: https://yuanqidu.github.io/
+  - role: Advisor
+    name: Liang Zhao
+    aff: Emory University
+    im: static/images/liangzhao.jpeg
+    link: http://cs.emory.edu/~lzhao41/
+
+

@@ -1,0 +1,63 @@
+{% set active_page = "Home" %}
+{% extends "base.html" %}
+
+{% block top %}
+<head>
+    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="static/css/jemdoc.css" type="text/css" />
+</head>
+
+<style>
+  .back {
+    background: url("{{config.background_image}}") no-repeat center;
+    background-size: cover;
+  }
+  .back h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+  }
+</style>
+
+<div class="jumbotron jumbotron-fluid back" style="padding-bottom: 20px;">
+  <div class="row header p-6 m-5">
+    <div class="toptitle p-1 mx-auto text-center text-white col-md-9 col-sm-12">
+      <h4>
+          Brain Networks
+      </h4>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<h2>Introduction</h2>
+
+
+<h2>Brain</h2>
+<ul>
+    <li>Description: </li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+        </tr>
+        <tr>
+            <td>Brain</td>
+            <td>Brain Network</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+        </tr>
+    </table>
+    <li>Download link:</li>
+    <li>Acknowlegement: <br></li>
+</ul>
+
+
+{% endblock %}

@@ -1,0 +1,111 @@
+{% set active_page = "Home" %}
+{% extends "base.html" %}
+
+{% block top %}
+<head>
+    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="static/css/jemdoc.css" type="text/css" />
+</head>
+
+<style>
+  .back {
+    background: url("{{config.background_image}}") no-repeat center;
+    background-size: cover;
+  }
+  .back h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+  }
+</style>
+
+<div class="jumbotron jumbotron-fluid back" style="padding-bottom: 20px;">
+  <div class="row header p-6 m-5">
+    <div class="toptitle p-1 mx-auto text-center text-white col-md-9 col-sm-12">
+      <h4>
+          Proteins
+      </h4>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<h2>Introduction</h2>
+
+
+<h2>Protein</h2>
+<ul>
+    <li>Description: This dataset contains 918 protein graphs with 100 ≤ \|V\| ≤ 500. Each protein is represented by a graph, where nodes are amino acids and two nodes are connected if they are less than 6 Angstroms apart.</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+        </tr>
+        <tr>
+            <td>Protein</td>
+            <td>Proteins</td>
+            <td>---</td>
+            <td>---</td>
+            <td>---</td>
+        </tr>
+    </table>
+    <li>Download link:</li>
+    <li>Acknowlegement: <br>P. D. Dobson and A. J. Doig, “Distinguishing enzyme structures from non-enzymes without alignments,” Journal of molecular biol- ogy, vol. 330, no. 4, pp. 771–783, 2003.</li>
+</ul>
+
+<h2>Protein Folding</h2>
+<ul>
+    <li>Description: This dataset contains dynamic folding processes of a protein peptide with sequence AGAAAAGA in 38 steps. The node feature of each protein is the sequence (AGAAAAGA) along with the spatial locations of each amino acid, and the edge feature of each protein is an adjacency matrix constructed by connecting all pairs of nodes with distance < 8 Å.</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+        </tr>
+        <tr>
+            <td>ProFold</td>
+            <td>Proteins</td>
+            <td>76,000</td>
+            <td>8</td>
+            <td>~40</td>
+        </tr>
+    </table>
+    <li>Download link: <a href="https://drive.google.com/file/d/1wmqiXpQCxJb-cOY3NyWgr1kEGzNOzwjQ/view?usp=sharing">ProFold</a></li>
+    <li>Acknowlegement: <br>X. Guo, Y. Du, and L. Zhao, "Disentangled Deep Generative Model for Spatial Networks", ACM SIGKDD Conference on Knowledge Discovery and Data Mining, 2021.</li>
+</ul>
+
+<h2>Enzymes</h2>
+<ul>
+    <li>Description: This dataset contains protein tertiary structures representing 600 enzymes. Nodes in a graph (protein) represent secondary structure elements, and two nodes are connected if the corresponding elements are interacting. The node labels indicate the type of secondary structure, which is either helices, turns, or sheets.</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+        </tr>
+        <tr>
+            <td>Enzymes</td>
+            <td>Proteins</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <li>Download link:</li>
+    <li>Acknowlegement: <br>I. Schomburg, A. Chang, C. Ebeling, M. Gremse, C. Heldt, G. Huhn, and D. Schomburg, “Brenda, the enzyme database: updates and major new developments,” Nucleic acids research, vol. 32, no. suppl 1, pp. D431–D433, 2004.</li>
+</ul>
+
+
+{% endblock %}

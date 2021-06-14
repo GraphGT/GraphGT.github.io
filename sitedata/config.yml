@@ -1,0 +1,31 @@
+name: GraphGen
+tagline: "GraphGen: A Large-scale Graph Generation Dataset Collection"
+analytics: UA-
+logo:
+  image: static/images/logo.png
+  width: 40px
+  height: auto
+# uncomment the following line to show the site title next to the logo image
+# site_title: DLG4NLP
+page_title:
+  prefix: 'GraphGen'
+  separator: ': '
+background_image: static/images/main.jpg
+organization: GraphGen Team
+
+
+# Configuration for auth
+#Test user
+#user: miniconf@miniconf.com
+#pass: mIniconf1_
+
+use_auth0:
+auth0_client_id : JIdr6wi0z27LyLgwkJF0fpk700aj7MNH
+auth0_domain : miniconf.auth0.com
+
+calendar:
+  colors: #  Colors for the different event hashtags:
+    ---: '#bed972'
+    qa: '#4FCAEB'
+    talk: '#ccc'
+  sunday_saturday: false  #  Include Sunday and Saturday
