@@ -1,0 +1,76 @@
+{% set active_page = "Home" %}
+{% extends "base.html" %}
+
+{% block top %}
+<head>
+    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="static/css/jemdoc.css" type="text/css" />
+</head>
+
+<style>
+  .back {
+    background: url("{{config.background_image}}") no-repeat center;
+    background-size: cover;
+  }
+  .back h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+  }
+</style>
+
+<div class="jumbotron jumbotron-fluid back" style="padding-bottom: 20px;">
+  <div class="row header p-6 m-5">
+    <div class="toptitle p-1 mx-auto text-center text-white col-md-9 col-sm-12">
+      <h4>
+          Scene Graphs
+      </h4>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<h2>CLEVR</h2>
+<ul>
+    <li>Description: CLEVR provides a dataset for visual question answer, which can be formalized as a spatial-graph dataset. There are $10$ objects in the image with different 3D locations. Each object is identified by its shape, such as sphere, cylinder, and cube. The relationship between two objects can be categorized into four types: right, behind, front, left, with directions. Thus, each image can be formalized as a labeled directed graph with different edge types and node types. Thus, the spatial information of each nodes is closely correlated with the edge types between each pair of nodes. There are 70,000 training samples and 15,000 testing samples.</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+            <th>Attributed</th>
+            <th>Directed</th>
+            <th>Weighted</th>
+            <th>Signed</th>
+            <th>Homogeneous</th>
+            <th>Spatial</th>
+            <th>Temporal</th>
+            <th>Labels</th>
+        </tr>
+        <tr>
+            <td>CLEVR</td>
+            <td>Scene Graphs</td>
+            <td>85,000</td>
+            <td>6</td>
+            <td>~40</td>
+            <th>YES</th>
+            <th>YES</th>
+            <th>YES</th>
+            <th>NO</th>
+            <th>YES</th>
+            <th>3D</th>
+            <th>NO</th>
+            <th>NO</th>
+        </tr>
+    </table>
+    <li>Download link: <a href="https://drive.google.com/drive/folders/1kklSQ8w79tw1N4hwJQOpJ1gwLKRNZZcK?usp=sharing">CLEVR</a></li>
+    <li>Acknowlegement: <br>Johnson, Justin and Hariharan, Bharath and van der Maaten, Laurens and Fei-Fei, Li and Lawrence Zitnick, C. and Girshick, Ross. CLEVR: A Diagnostic Dataset for Compositional Language and Elementary Visual Reasoning. In the Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2017.</li>
+</ul>
+
+
+{% endblock %}

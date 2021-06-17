@@ -1,0 +1,94 @@
+{% set active_page = "Home" %}
+{% extends "base.html" %}
+
+{% block top %}
+<head>
+    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="static/css/jemdoc.css" type="text/css" />
+</head>
+
+<style>
+  .back {
+    background: url("{{config.background_image}}") no-repeat center;
+    background-size: cover;
+  }
+  .back h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+  }
+</style>
+
+<div class="jumbotron jumbotron-fluid back" style="padding-bottom: 20px;">
+  <div class="row header p-6 m-5">
+    <div class="toptitle p-1 mx-auto text-center text-white col-md-9 col-sm-12">
+      <h4>
+          Physical Simulation Networks
+      </h4>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<h2>N-body Simulations</h2>
+<ul>
+    <li>Descripton<br>
+        Spring: This dataset simulates a system containing 5 particles connected by springs. Particles are located in 2D coordinates without any external forces except elastic collisions. Particles are connected via springs with probability of 0.5, and interactions between springs follow Hooke’s law. The initial location of each particle is sampled from a Gaussian distribution and the initial velocity of each particle is a random vector of norm 0.5. The trajectories of all springs are calculated by solving Newton’s equations of motion PDE. The temporal length of each sequence is 49, which obtains from subsampling every 100 steps in a trajectory.<br>
+        Charged: This dataset simulates a system containing 5 particles with positive or negative charges. Particles are located in 2D coordinates without any external forces except attracting force and repelling force. The quantity of electrical charges is sampled from uniform probability. Each particle interacts via Coulomb forces. The initial location of each particle is sampled from a Gaussian distribution and the initial velocity of each particle is a random vector of norm 0.5. The trajectories of all springs are calculated by solving Newton’s equations of motion PDE. The temporal length of each sequence is 49, which obtains from subsampling every 100 steps in a trajectory.</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+            <th>Attributed</th>
+            <th>Directed</th>
+            <th>Weighted</th>
+            <th>Signed</th>
+            <th>Homogeneous</th>
+            <th>Spatial</th>
+            <th>Temporal</th>
+            <th>Labels</th>
+        </tr>
+        <tr>
+            <td>N-body-Spring</td>
+            <td>Physical Simulation Networks</td>
+            <td>3,430,000</td>
+            <td>5</td>
+            <td>5</td>
+            <td>YES</td>
+            <td>NO</td>
+            <td>NO</td>
+            <td>NO</td>
+            <td>YES</td>
+            <td>2D</td>
+            <td>YES</td>
+            <td>Time</td>
+        </tr>
+        <tr>
+            <td>N-body-Charged</td>
+            <td>Physical Simulation Networks</td>
+            <td>3,430,000</td>
+            <td>5</td>
+            <td>~3</td>
+            <td>YES</td>
+            <td>NO</td>
+            <td>NO</td>
+            <td>NO</td>
+            <td>YES</td>
+            <td>2D</td>
+            <td>YES</td>
+            <td>Time</td>
+        </tr>
+    </table>
+    <li>Download link: <a href="https://drive.google.com/file/d/1TZ4I0Ri3Aa7xl3uUnfxf3oh5f6xCWRuj/view?usp=sharing">Spring</a>, <a href="https://drive.google.com/file/d/1h3DpahapprhY1kzBHhgDLGpjts7Kqr8n/view?usp=sharing">Charged</a></li>
+    <li>Acknowlegement: <br>
+    Kipf, T., Fetaya, E., Wang, K. C., Welling, M., & Zemel, R. (2018, July). Neural relational inference for interacting systems. In International Conference on Machine Learning (pp. 2688-2697). PMLR.</li>
+</ul>
+
+
+{% endblock %}

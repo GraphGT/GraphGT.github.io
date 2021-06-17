@@ -1,0 +1,99 @@
+{% set active_page = "Home" %}
+{% extends "base.html" %}
+
+{% block top %}
+<head>
+    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" href="static/css/jemdoc.css" type="text/css" />
+</head>
+
+<style>
+  .back {
+    background: url("{{config.background_image}}") no-repeat center;
+    background-size: cover;
+  }
+  .back h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+  }
+</style>
+
+<div class="jumbotron jumbotron-fluid back" style="padding-bottom: 20px;">
+  <div class="row header p-6 m-5">
+    <div class="toptitle p-1 mx-auto text-center text-white col-md-9 col-sm-12">
+      <h4>
+          Skeleton Graphs
+      </h4>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<h2>Human Skeleton Graphs</h2>
+<ul>
+    <li>Description: <br>
+        Kinetics: a large-scale human action dataset with 300000 videos  clips in 400 classes. Those video clips are from YouTube with a great variety. The raw Kinetics doesn't contain skeleton data, and [2] uses OpenPose toolbox to generate skeleton with 18 joints on every frame. Kinetics-Skeleton contains 240000 clips of training data and 20000 clips of test data.
+    <br>
+    NTU-RGB+D: a large and widely used action recognition dataset with 56000 action clips in 60 classes. These clips are performed by 40 volunteers captured in a constrained lab environment, with three camera views recorded simultaneously. The dataset provides 3D joint locations of each frame and 25 joints for each subject.
+    </li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+            <th>Attributed</th>
+            <th>Directed</th>
+            <th>Weighted</th>
+            <th>Signed</th>
+            <th>Homogeneous</th>
+            <th>Spatial</th>
+            <th>Temporal</th>
+            <th>Labels</th>
+        </tr>
+        <tr>
+            <td>Human Skeleton Graphs (Kinectics)</td>
+            <td>Skeleton Graphs</td>
+            <td>260,000</td>
+            <td>18</td>
+            <td>17</td>
+            <th>NO</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>YES</th>
+            <th>2D</th>
+            <th>YES</th>
+            <th>YES</th>
+        </tr>
+        <tr>
+            <td>Human Skeleton Graphs (NTU-RGB+D)</td>
+            <td>Skeleton Graphs</td>
+            <td>56,000</td>
+            <td>25</td>
+            <td>24</td>
+            <th>NO</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>YES</th>
+            <th>3D</th>
+            <th>YES</th>
+            <th>YES</th>
+        </tr>
+    </table>
+    <li>Download link: <a href="https://github.com/open-mmlab/mmskeleton/blob/master/doc/SKELETON_DATA.md">Kinetics</a>, <a href="http://rose1.ntu.edu.sg/datasets/actionrecognition.asp">NTU-RGB+D</a></li>
+    <li>Acknowlegement: <br>
+        Kinetics: Kay, W., Carreira, J., Simonyan, K., Zhang, B., Hillier, C., Vijayanarasimhan, S., ... & Zisserman, A. (2017). The kinetics human action video dataset. arXiv preprint arXiv:1705.06950.
+        <br>
+        NTU-RGB+D: Shahroudy, A., Liu, J., Ng, T. T., & Wang, G. (2016). Ntu rgb+ d: A large scale dataset for 3d human activity analysis. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1010-1019).
+    </li>
+</ul>
+
+
+{% endblock %}
