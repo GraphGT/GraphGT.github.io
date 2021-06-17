@@ -32,8 +32,6 @@
 
 {% block content %}
 
-<h2>Introduction</h2>
-
 <h2>Co-authorship Networks</h2>
 <ul>
     <li>Description: This dataset is collected from DBLP-Citation-network V12, which contains around 4.9 million papers and 45 million citation relationships. We construct graphs by selecting authors as nodes and co-authorships as edges during the time period from 1990 to 2019. To cut the graphs into pieces, we generate sub-graphs based on the Fields of Study attribute from papers. For each field, we generate one spatio-temporal graph. We generate 2361 spatio-tempora graphs with a total of around 9 million nodes and a total of around 6 million of edges.</li>
@@ -45,49 +43,65 @@
             <th>#Graphs</th>
             <th>#Nodes</th>
             <th>#Edges</th>
+            <th>Attributed</th>
+            <th>Directed</th>
+            <th>Weighted</th>
+            <th>Signed</th>
+            <th>Homogeneous</th>
+            <th>Spatial</th>
+            <th>Temporal</th>
+            <th>Labels</th>
         </tr>
         <tr>
             <td>CollabNet</td>
             <td>Collaboration Networks</td>
-            <td>---</td>
-            <td>---</td>
-            <td>---</td>
+            <td>2,361</td>
+            <td>303,308</td>
+            <td>207,632</td>
+            <th>NO</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>YES</th>
+            <th>Lat,Long</th>
+            <th>YES</th>
+            <th>YES</th>
         </tr>
     </table>
-    <li>Download link:</li>
+    <li>Download link: <a href="https://www.dropbox.com/s/fsfj0jrq0rm1vau/co_authorship_dataset.zip?dl=0">CollabNet</a></li>
     <li>Acknowlegement: <br>GraphGen: A Large-scale Graph Generative Dataset Collection. Yuanqi Du, Xiaojie Guo, Hengning Cao, Liang Zhao, 2021.</li>
 </ul>
 
-<h2>Citation Networks</h2>
-<ul>
-    <li>Description: Cora and Citeseer are citation networks; nodes correspond to publications and an edge represents one paper citing the other. Node labels represent the publication area. The Cora dataset contains 2708 nodes, 5429 edges, 7 classes and 1433 features per node. The Citeseer dataset contains 3327 nodes, 4732 edges, 6 classes and 3703 features per node.</li>
-    <li>Statistics:</li>
-    <table style="text-align:center" border=1>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>#Graphs</th>
-            <th>#Nodes</th>
-            <th>#Edges</th>
-        </tr>
-        <tr>
-            <td>Cora</td>
-            <td>Citation Networks</td>
-            <td>---</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-        <tr>
-            <td>Citeseer</td>
-            <td>Citation Networks</td>
-            <td>---</td>
-            <td>---</td>
-            <td>---</td>
-        </tr>
-    </table>
-    <li>Download link:</li>
-    <li>Acknowlegement: <br></li>
-</ul>
+<!--<h2>Citation Networks</h2>-->
+<!--<ul>-->
+<!--    <li>Description: Cora and Citeseer are citation networks; nodes correspond to publications and an edge represents one paper citing the other. Node labels represent the publication area. The Cora dataset contains 2708 nodes, 5429 edges, 7 classes and 1433 features per node. The Citeseer dataset contains 3327 nodes, 4732 edges, 6 classes and 3703 features per node.</li>-->
+<!--    <li>Statistics:</li>-->
+<!--    <table style="text-align:center" border=1>-->
+<!--        <tr>-->
+<!--            <th>Name</th>-->
+<!--            <th>Type</th>-->
+<!--            <th>#Graphs</th>-->
+<!--            <th>#Nodes</th>-->
+<!--            <th>#Edges</th>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Cora</td>-->
+<!--            <td>Citation Networks</td>-->
+<!--            <td>---</td>-->
+<!--            <td>---</td>-->
+<!--            <td>---</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Citeseer</td>-->
+<!--            <td>Citation Networks</td>-->
+<!--            <td>---</td>-->
+<!--            <td>---</td>-->
+<!--            <td>---</td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--    <li>Download link:</li>-->
+<!--    <li>Acknowlegement: <br></li>-->
+<!--</ul>-->
 
 
 {% endblock %}

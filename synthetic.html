@@ -1,164 +1,17 @@
+{% set active_page = "Home" %}
+{% extends "base.html" %}
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <!-- Required meta tags -->
-    <meta charset="utf-8"/>
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <!-- External Javascript libs_ext  -->
-    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js"
-            integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU="
-            crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
-
-    <script
-            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"
-    ></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-            integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg="
-            crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js"
-            integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
-            crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js"
-            integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww="
-            crossorigin="anonymous"></script>
-
-
-    <!-- Library libs_ext -->
-    <script src="static/js/libs_ext/typeahead.bundle.js"></script>
-
-
-    <!--    Internal Libs -->
-    <script src="static/js/data/api.js"></script>
-
-    
-
-    <!-- External CSS -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-          integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY="
-          crossorigin="anonymous">
-
-    <!-- External Fonts (no google for china) -->
-    <link
-            href="static/css/Lato.css"
-            rel="stylesheet"
-    />
-    <link href="static/css/Exo.css" rel="stylesheet"/>
-    <link
-            href="static/css/Cuprum.css"
-            rel="stylesheet"
-    />
-    <link rel="stylesheet" href="static/css/main.css"/>
-<!--    <link rel="stylesheet" href="static/css/fa_regular.css"/>-->
-    <link rel="stylesheet" href="static/css/fa_solid.css"/>
-    <link rel="stylesheet" href="static/css/lazy_load.css"/>
-    <link rel="stylesheet" href="static/css/typeahead.css"/>
-
-    <title>GraphGen</title>
-    
-</head>
-
-<body>
-<!-- NAV -->
-
-<nav
-        class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
-        id="main-nav"
->
-    <div class="container">
-<!--        <a class="navbar-brand" href="index.html">-->
-<!--            <img-->
-<!--                    class="logo" src="static/images/logo.png"-->
-<!--                    height="auto"-->
-<!--            width="40px"-->
-<!--            />-->
-<!--        </a>-->
-        
-        <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-                class="collapse navbar-collapse text-right flex-grow-1"
-                id="navbarNav"
-        >
-            <ul class="navbar-nav ml-auto">
-                
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="index.html">Paper</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="index.html#dataset">Dataset</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="index.html#task">Task</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="dataset.html">Dataset</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="task.html">Task</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="team.html">Team</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="index.html">Blog</a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</nav>
-
-
-
-<!-- User Overrides -->
-
+{% block top %}
 <head>
     <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <link rel="stylesheet" href="static/css/jemdoc.css" type="text/css" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
 </head>
 
 <style>
   .back {
-    background: url("static/images/main.jpg") no-repeat center;
+    background: url("{{config.background_image}}") no-repeat center;
     background-size: cover;
   }
   .back h2 {
@@ -176,19 +29,9 @@
     </div>
   </div>
 </div>
+{% endblock %}
 
-
-<div class="container">
-    <!-- Tabs -->
-    <div class="tabs">
-         
-    </div>
-    <!-- Content -->
-    <div class="content">
-        
-
-<h2>Introduction</h2>
-
+{% block content %}
 
 <h2>Scale-free Graphs</h2>
 <ul>
@@ -201,13 +44,29 @@
             <th>#Graphs</th>
             <th>#Nodes</th>
             <th>#Edges</th>
+            <th>Attributed</th>
+            <th>Directed</th>
+            <th>Weighted</th>
+            <th>Signed</th>
+            <th>Homogeneous</th>
+            <th>Spatial</th>
+            <th>Temporal</th>
+            <th>Labels</th>
         </tr>
         <tr>
             <td>Scale-free Graphs</td>
             <td>Synthetic Networks</td>
             <td>10,000</td>
             <td>10/20/50/100/150</td>
-            <td>~20/~40/~?/~200/~?</td>
+            <td>~20/~40/~100/~200/~?</td>
+            <th>NO</th>
+            <th>YES</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>YES</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>NO</th>
         </tr>
     </table>
     <li>Download link: <a href="https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EartEwo94NtJrsBUSDCaSyIBYgHxLSVj6qwziixaQHHHdw">scale_free_10</a>,<a href="https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EQ3WsWoTBwNLsQXQOIwChOgBsbDIUfZpp0tmvJYGp0JrtA">scale_free_20</a>,<a href="https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/Ec7OxxtCrW5Nr7itfQAlcagBQaRNG-ttRt-DZkj8jBxphQ">scale_free_50</a>,<a href="https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EXLsRjyz7z1HhRur-F9jkpwBFfRhO14NfQxXoLSHwCzYfg">scale_free_100</a>,<a href="https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EQ7FRL8QWYdPg25QaCe0VpEBHwioyA4nEjP2GDgiVQQwVw">scale_free_150</a></li>
@@ -225,6 +84,14 @@
             <th>#Graphs</th>
             <th>#Nodes</th>
             <th>#Edges</th>
+            <th>Attributed</th>
+            <th>Directed</th>
+            <th>Weighted</th>
+            <th>Signed</th>
+            <th>Homogeneous</th>
+            <th>Spatial</th>
+            <th>Temporal</th>
+            <th>Labels</th>
         </tr>
         <tr>
             <td>Erdos-Renyi Graphs</td>
@@ -232,6 +99,14 @@
             <td>1,000</td>
             <td>20/40/60</td>
             <td>~100/~200/~400</td>
+            <th>YES</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>YES</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>NO</th>
         </tr>
     </table>
     <li>Download link: <a href="https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EacBEmToBKdPtOhjJocARikBV6WRr7kNs50QyFShsx1k1w">erdos_renyi_20</a>,<a href="https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EU7TdmWC_z1HvY3KLcPonZwBB167_MYTQZuW8wSso4Qc1g">erdos_renyi_40</a>,<a href="https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EQYmsg6wu3ZAuvHS1Klc_gwBdZP3jCl_PM2p6p7nLMZ66g">erdos_renyi_60</a></li>
@@ -249,6 +124,14 @@
             <th>#Graphs</th>
             <th>#Nodes</th>
             <th>#Edges</th>
+            <th>Attributed</th>
+            <th>Directed</th>
+            <th>Weighted</th>
+            <th>Signed</th>
+            <th>Homogeneous</th>
+            <th>Spatial</th>
+            <th>Temporal</th>
+            <th>Labels</th>
         </tr>
         <tr>
             <td>Barab´asi-Albert Graphs</td>
@@ -256,61 +139,99 @@
             <td>1,000</td>
             <td>20/40/60</td>
             <td>~60/~190/~300</td>
+            <th>YES</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>YES</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>NO</th>
         </tr>
     </table>
     <li>Download link: <a href="https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/ESU5immRQ3xCvxkAy0LFvlgBTJrF0eHDosjRhnnayUXqHw">barab´asi_albert_20</a>,<a href="https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EaihwXZdW2dHpl0X22dtD5wBcKFD9X6F1SoYhDKzAhRX1w">barab´asi_albert_40</a>,<a href="https://exchangelabsgmu-my.sharepoint.com/:u:/g/personal/xguo7_masonlive_gmu_edu/EV96-W8Kw1hFnMxDudDWCk0BK6J24_my2yD7KrgJLR-yWw">barab´asi_albert_60</a></li>
     <li>Acknowlegement: <br>Guo X, Zhao L, Nowzari C, Rafatirad S, Homayoun H, Dinakarrao SM. Deep Multi-attributed Graph Translation with Node-Edge Co-evolution. Inhe 19th International Conference on Data Mining (ICDM 2019).</li>
 </ul>
 
+<h2>Waxman Graphs</h2>
+<ul>
+    <li>Description: The Waxman random graph model places n nodes uniformly at random in a rectangular domain. Each pair of nodes at distance d is joined by an edge with the probability of βe−d/αL, where L is the maximum distance between any pair of nodes, α and β are model parameters, β is set to 0.4 and α is set to 0.1. The coordinates of the four vertexes of rectangular domain for generating the spatial location of nodes are (p,p),(p,n×s+p),(n×s+p,p),(n×s+p, n×s+p), respectively. There are 8,000 samples for training and 1,600 for testing.</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+            <th>Attributed</th>
+            <th>Directed</th>
+            <th>Weighted</th>
+            <th>Signed</th>
+            <th>Homogeneous</th>
+            <th>Spatial</th>
+            <th>Temporal</th>
+            <th>Labels</th>
+        </tr>
+        <tr>
+            <td>Waxman Graphs</td>
+            <td>Synthetic Networks</td>
+            <td>9,600</td>
+            <td>25</td>
+            <td>~250</td>
+            <th>YES</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>YES</th>
+            <th>YES</th>
+            <th>2D</th>
+            <th>YES</th>
+        </tr>
+    </table>
+    <li>Download link: <a href="https://drive.google.com/drive/folders/1tGxiMFPktwJ7XR0ZNJBiYuU6yMwfu18S?usp=sharing">Waxman Graph</a></li>
+    <li>Acknowlegement: <br>Guo X, Du Y, Zhao L. Deep Generative Model for Spatial Networks. 27th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD 2021), to appear, virtual, Aug 2021.</li>
+</ul>
+
+<h2>Random Geometric Graphs</h2>
+<ul>
+    <li>Description: The random geometric graph model places $n$ nodes uniformly at random in a rectangular domain. Two nodes are joined by an edge if their distance is larger than a threshold β = 12. The coordinates of the four vertexes of rectangular domain is defined as the same as that in Waxman graph. The node attributes among a graph are generated in the same rule as that for generating Waxman graphs. There are 8,000 samples for training and 1,600 for testing in this dataset.</li>
+    <li>Statistics:</li>
+    <table style="text-align:center" border=1>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>#Graphs</th>
+            <th>#Nodes</th>
+            <th>#Edges</th>
+            <th>Attributed</th>
+            <th>Directed</th>
+            <th>Weighted</th>
+            <th>Signed</th>
+            <th>Homogeneous</th>
+            <th>Spatial</th>
+            <th>Temporal</th>
+            <th>Labels</th>
+        </tr>
+        <tr>
+            <td>Random Geometric Graphs</td>
+            <td>Synthetic Networks</td>
+            <td>9,600</td>
+            <td>25</td>
+            <td>~350</td>
+            <th>YES</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>YES</th>
+            <th>YES</th>
+            <th>2D</th>
+            <th>YES</th>
+        </tr>
+    </table>
+    <li>Download link: <a href="https://drive.google.com/drive/folders/1X1Q6Rq5JEzD-9lbyZvnKqwyx96QKXEKu?usp=sharing">Random Geometric Graph</a></li>
+    <li>Acknowlegement: <br>Guo X, Du Y, Zhao L. Deep Generative Model for Spatial Networks. 27th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD 2021), to appear, virtual, Aug 2021.</li>
+</ul>
 
 
-    </div>
-</div>
-
-
-
-<!-- Google Analytics -->
-<script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=UA-"
-></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-
-  gtag("js", new Date());
-  gtag("config", "UA-");
-</script>
-
-<!-- Footer -->
-<footer class="footer bg-light p-4">
-    <div class="container">
-        <p class="float-right"><a href="#">Back to Top</a></p>
-        <p class="text-center">© 2020 GraphGen Team</p>
-    </div>
-</footer>
-
-<!-- Code for hash tags -->
-<script type="text/javascript">
-  $(document).ready(function () {
-    if (window.location.hash !== "") {
-      $(`a[href="${window.location.hash}"]`).tab("show");
-    }
-
-    $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
-      const hash = $(e.target).attr("href");
-      if (hash.substr(0, 1) === "#") {
-        const position = $(window).scrollTop();
-        window.location.replace(`#${hash.substr(1)}`);
-        $(window).scrollTop(position);
-      }
-    });
-  });
-</script>
-<!--    <script src="static/js/modules/lazyLoad.js"></script>-->
-
-</body>
-</html>
+{% endblock %}

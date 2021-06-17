@@ -126,14 +126,6 @@
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="dataset.html">Dataset</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="task.html">Task</a>
-                </li>
-                
-                <li class="nav-item ">
                     <a class="nav-link" href="team.html">Team</a>
                 </li>
                 
@@ -187,13 +179,10 @@
     <div class="content">
         
 
-<h2>Introduction</h2>
-
-
 <h2>Traffic Networks</h2>
 <ul>
     <li>Description: <b>TraffNet-LA</b> is collected by Los Angeles Metropolitan Transportation Authority (LA-Metro), and processed by University of Southern California's Integrated Media Systems Center. This dataset contains traffic information collected from 207 loop detectors in the highway of Los Angeles County for 4 months (from Mar 1st 2012 to Jun 30th 2012). Each sensor records traffic speed value per 5 minutes. <br>
-        <b>TraffNet-PeMS</b> is collected by California Transportation Agencies (CalTrans) Performance Measurement System (PeMS). PeMS-BAY dataset collects traffic information in the Bay Area. The dataset contains traffic information of 325 sensors within 5 months (From Jan 1st 2017 to May 31st 2017). Each sensor records traffic speed value per 5 minutes.</li>
+        <b>TraffNet-BAY</b> is collected by California Transportation Agencies (CalTrans) Performance Measurement System (PeMS). PeMS-BAY dataset collects traffic information in the Bay Area. The dataset contains traffic information of 325 sensors within 5 months (From Jan 1st 2017 to May 31st 2017). Each sensor records traffic speed value per 5 minutes.</li>
     <li>Statistics:</li>
     <table style="text-align:center" border=1>
         <tr>
@@ -202,24 +191,50 @@
             <th>#Graphs</th>
             <th>#Nodes</th>
             <th>#Edges</th>
+            <th>Attributed</th>
+            <th>Directed</th>
+            <th>Weighted</th>
+            <th>Signed</th>
+            <th>Homogeneous</th>
+            <th>Spatial</th>
+            <th>Temporal</th>
+            <th>Labels</th>
         </tr>
         <tr>
             <td>TraffNet-LA</td>
             <td>Traffic Networks</td>
-            <td>---</td>
+            <td>34,272</td>
             <td>325</td>
-            <td>2369</td>
+            <td>2,369</td>
+            <td>YES</td>
+            <td>YES</td>
+            <td>YES</td>
+            <td>NO</td>
+            <td>YES</td>
+            <td>Lat,Long</td>
+            <td>YES</td>
+            <td>Time</td>
         </tr>
         <tr>
-            <td>TraffNet-PeMS</td>
+            <td>TraffNet-BAY</td>
             <td>Traffic Networks</td>
-            <td>---</td>
+            <td>50,112</td>
             <td>207</td>
-            <td>1616</td>
+            <td>1,515</td>
+            <td>YES</td>
+            <td>YES</td>
+            <td>YES</td>
+            <td>NO</td>
+            <td>YES</td>
+            <td>Lat,Long</td>
+            <td>YES</td>
+            <td>Time</td>
         </tr>
     </table>
-    <li>Download link:</li>
-    <li>Acknowlegement: <br></li>
+    <li>Download link: <a href="https://drive.google.com/file/d/18hc2VvG552cbDUgznnRb3k-TdwqR8lXQ/view?usp=sharing">TraffNet-LA</a>, <a href="https://drive.google.com/file/d/1U8SEWPzUzrdglkeYsi3UNVdPeNZY5Hxr/view?usp=sharing">TraffNet-BAY</a></li>
+    <li>Acknowlegement: <br>TraffNet-LA: Jagadish, H. V., Gehrke, J., Labrinidis, A., Papakonstantinou, Y., Patel, J. M., Ramakrishnan, R., & Shahabi, C. (2014). Big data and its technical challenges. Communications of the ACM, 57(7), 86-94.
+        <br>
+        TraffNet-BAY: Chen, C. (2002). Freeway performance measurement system (PeMS). University of California, Berkeley.</li>
 </ul>
 
 
