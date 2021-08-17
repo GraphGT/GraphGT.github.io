@@ -1,5 +1,5 @@
-name: GraphGen
-tagline: "GraphGen: A Large-scale Graph Generation Dataset Collection"
+name: GraphGT
+tagline: "GraphGT: Systematic Datasets for Deep Graph Generation and Transformation"
 analytics: UA-
 logo:
   image: static/images/logo.png
@@ -8,10 +8,10 @@ logo:
 # uncomment the following line to show the site title next to the logo image
 # site_title: DLG4NLP
 page_title:
-  prefix: 'GraphGen'
+  prefix: 'GraphGT'
   separator: ': '
-background_image: static/images/main.jpg
-organization: GraphGen Team
+background_image: static/images/main.jpeg
+organization: GraphGT Team
 
 
 # Configuration for auth

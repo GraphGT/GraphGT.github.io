@@ -1,9 +1,14 @@
 team:
-  - role: Developer
+  - role: Leader
     name: Yuanqi Du
     aff: George Mason University
     im: static/images/yuanqi.jpeg
     link: https://yuanqidu.github.io/
+  - role: Developer
+    name: Shiyu Wang
+    aff: Emory University
+#im: static/images/yuanqi.jpeg
+#link: https://yuanqidu.github.io/
   - role: Developer
     name: Xiaojie GUo
     aff: JD.COM Silicon Valley Research Center
@@ -14,6 +19,18 @@ team:
     aff: George Mason University
     im: static/images/hengning.jpeg
     link: https://yuanqidu.github.io/
+  - role: Developer
+    name: Shujie Hu
+    aff: Emory University
+  - role: Developer
+    name: Junji Jiang
+    aff: Tianjin University
+  - role: Developer
+    name: Aishwarya Varala
+    aff: George Mason University
+  - role: Developer
+    name: Abhinav Angirekula
+    aff: Thomas Jefferson High School
   - role: Advisor
     name: Liang Zhao
     aff: Emory University
