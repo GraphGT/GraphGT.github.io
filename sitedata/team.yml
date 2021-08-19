@@ -7,6 +7,7 @@ team:
   - role: Developer
     name: Shiyu Wang
     aff: Emory University
+    im: static/images/ShiyuPic.jpg
 #im: static/images/yuanqi.jpeg
 #link: https://yuanqidu.github.io/
   - role: Developer
@@ -22,15 +23,19 @@ team:
   - role: Developer
     name: Shujie Hu
     aff: Emory University
+    im: static/images/hu.jpg
   - role: Developer
     name: Junji Jiang
     aff: Tianjin University
+    im: static/images/junji.jpeg
   - role: Developer
     name: Aishwarya Varala
     aff: George Mason University
+    im: static/images/Aishwarya_Varala.jpg
   - role: Developer
     name: Abhinav Angirekula
     aff: Thomas Jefferson High School
+    im: static/images/abhinav.jpeg
   - role: Advisor
     name: Liang Zhao
     aff: Emory University
