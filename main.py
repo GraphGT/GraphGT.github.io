@@ -57,7 +57,6 @@ def _data():
 @app.route("/")
 def index():
     data = _data()
-    data["readme"] = open("README.md").read()
     data["team"] = site_data["team"]["team"]
     return redirect("/index.html")
 
@@ -156,57 +155,13 @@ def synthetic():
 @app.route("/team.html")
 def team():
     data = _data()
-    data["readme"] = open("README.md").read()
     data["team"] = site_data["team"]["team"]
     return render_template("team.html", **data)
 
 
-
-@app.route("/papers.html")
-def papers():
-#    data = _data()
-#    data["papers"] = site_data["papers"]
-#    return render_template("papers.html", **data)
-    data = _data()
-    data["readme"] = open("README.md").read()
-    data["team"] = site_data["team"]["team"]
-    return render_template("index.html", **data)
-
 @app.route("/blogs.html")
 def blogs():
     data = _data()
-    data["readme"] = open("README.md").read()
-    data["team"] = site_data["team"]["team"]
-    return render_template("index.html", **data)
-
-
-@app.route("/paper_vis.html")
-def paper_vis():
-    data = _data()
-    return render_template("papers_vis.html", **data)
-
-
-@app.route("/calendar.html")
-def schedule():
-    data = _data()
-    data["day"] = {
-        "speakers": site_data["speakers"],
-        "highlighted": [
-            format_paper(by_uid["papers"][h["UID"]]) for h in site_data["highlighted"]
-        ],
-    }
-    return render_template("schedule.html", **data)
-
-
-@app.route("/workshops.html")
-def workshops():
-#    data = _data()
-#    data["workshops"] = [
-#        format_workshop(workshop) for workshop in site_data["workshops"]
-#    ]
-#    return render_template("workshops.html", **data)
-    data = _data()
-    data["readme"] = open("README.md").read()
     data["team"] = site_data["team"]["team"]
     return render_template("index.html", **data)
 
