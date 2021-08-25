@@ -1,5 +1,5 @@
 name: GraphGT
-tagline: "GraphGT: Machine Learning Datasets for Deep Graph Generation and Transformation"
+tagline: "GraphGT: Machine Learning Datasets for Graph Generation and Transformation"
 analytics: UA-
 logo:
   image: static/images/logo.png
