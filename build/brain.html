@@ -134,6 +134,10 @@
                 </li>
                 
                 <li class="nav-item ">
+                    <a class="nav-link" href="https://github.com/yuanqidu/awesome-graph-generation">Survey</a>
+                </li>
+                
+                <li class="nav-item ">
                     <a class="nav-link" href="https://github.com/yuanqidu/GraphGT">GitHub</a>
                 </li>
                 
@@ -186,7 +190,7 @@
 
 <h2>Brain</h2>
 <ul>
-    <li>Description: </li>
+    <li>Description: The Brain dataset comes from the human connectome project (HCP) and has a few branches: restingstate, emotion, gambling, language, motor, relational, social and wm according to different tasks. In this dataset, the source graphs reflect the structural connectivity (SC), and the target graphs represent the functional connectivity \citep{guo2021deep}. Specifically, both types of connectivities are processed from the magnetic resonance imaging (MRI) data from HCP. SC is obtained by applying probabilistic tracking on the diffusion MRI data by Probtrackx tool from the FMRIB Software Library with 68 regions of insterest (ROI). The edge attributes of FC are defined as Pearson's correlation between two ROIs blood oxygen level-dependent time obtained from the resting-state functional MRI data. Node attributes is a one-hot vector representing index of each node. In total, 823 pairs of SC and FC samples are enrolled in the dataset.</li>
     <li>Statistics:</li>
     <table style="text-align:center" border=1>
         <tr>
@@ -205,23 +209,24 @@
             <th>Labels</th>
         </tr>
         <tr>
-            <td>Brain</td>
+            <td>Brain-emotion</td>
             <td>Brain Network</td>
-            <td>---</td>
-            <td>---</td>
-            <td>---</td>
-            <th>Attributed</th>
-            <th>Directed</th>
-            <th>Weighted</th>
-            <th>Signed</th>
-            <th>Homogeneous</th>
-            <th>Spatial</th>
-            <th>Temporal</th>
-            <th>Labels</th>
+            <td>811</td>
+            <td>68</td>
+            <td>2,278</td>
+            <th>NO</th>
+            <th>NO</th>
+            <th>YES</th>
+            <th>YES</th>
+            <th>YES</th>
+            <th>NO</th>
+            <th>NO</th>
+            <th>YES</th>
         </tr>
     </table>
-    <li>Download link:</li>
-    <li>Acknowlegement: <br></li>
+<!--    <li>Download link:</li>-->
+    <li>Acknowlegement: <br>
+    Guo, X., Zhao, L., Nowzari, C., Rafatirad, S., Homayoun, H., & Dinakarrao, S. M. P. (2019, November). Deep multi-attributed graph translation with node-Edge Co-evolution. In 2019 IEEE International Conference on Data Mining (ICDM) (pp. 250-259). IEEE.</li>
 </ul>
 
 
